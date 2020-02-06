@@ -1,3 +1,15 @@
 .jumbotron{
 	background-color: transparent !important;
 }
+
+figure {
+    display: inline-block;
+    margin: 20px; /* adjust as needed */
+}
+figure img {
+    vertical-align: top;
+    align-content: center;
+}
+figure figcaption {
+    text-align: center;
+}
