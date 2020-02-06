@@ -40,12 +40,12 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
-app.get('/', goal.view);
-app.get('/', month.view);
-app.get('/', profile.view);
-app.get('/', tips.view);
-app.get('/', addpage.view);
+app.get('/index', index.view);
+app.get('/goal', goal.view);
+app.get('/month', month.view);
+app.get('/profile', profile.view);
+app.get('/tips', tips.view);
+app.get('/addpage', addpage.view);
 // Example route
 // app.get('/users', user.list);
 
