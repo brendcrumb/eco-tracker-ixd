@@ -40,7 +40,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/index', index.view);
+app.get('/', index.view);
 app.get('/goal', goal.view);
 app.get('/month', month.view);
 app.get('/profile', profile.view);
