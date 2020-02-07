@@ -10,7 +10,7 @@ h2, h1{
 	border-radius: 50%;
 	border-width: 9px;
 	border-style: solid !important;
-	border-color: green !important;
+	border-color: black !important;
 	display: inline-block;
 }
 .dot h1{
