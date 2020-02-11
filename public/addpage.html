@@ -11,43 +11,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<style>
-	.btn {
-		border: none;
-		background-color: inherit;
-		padding: 26px 30px;
-		font-size: 20px;
-		cursor: pointer;
-		display: inline-block;
-	}
-	.btn:hover {background: #eee;}
-	.commute {color: grey;}
-	.waste {color: grey;}
-	.energy {color: grey;}
-	.food {color: grey;}
+
 
 	p {
 		text-align: center
 	}
+
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
 	</style>
 
 </head>
 
 <body>
 	<div class="jumbotron">
-	  <h2 class="text-center">Log Your Data</h2>
+	  <h3 class="text-center">Log Your Data</h3>
 	</div>
 	<p>
-		<img src="commute.png" alt="bus" width="50" height="50"/>
-		<button class="btn commute">Commute</button><br>
+		<a href="commute.html">
+			<img src="commute.png" alt="bus" width="75" height="75"/>
+			<p>commute</p>
+		</a>
 		<br>
-		<img src="waste.png" alt="trash can" width="50" height="50"/>
-		<button class="btn waste">Waste</button><br>
+		<a href="waste.html">
+			<img src="waste.png" alt="trash can" width="75" height="75"/>
+			<p>waste</p>
+		</a>
 		<br>
-		<img src="energy.png" alt="lightning bolt" width="50" height="50"/>
-		<button class="btn energy">Energy</button><br>
-		<br>
-		<img src="food.png" alt="food" width="50" height="50"/>
-		<button class="btn food">Food</button>
+		<a href="food.html">
+			<img src="food.png" alt="food" width="75" height="75"/>
+			<p>food</p>
+		</a>
 	</p>
 <nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom">
 <ul class="navbar-nav">
