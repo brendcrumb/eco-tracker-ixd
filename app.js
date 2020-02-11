@@ -14,6 +14,9 @@ var goal = require('./routes/goal');
 var month = require('./routes/month');
 var profile = require('./routes/profile');
 var tips = require('./routes/tips');
+var commute = require('./routes/commute');
+var food = require('./routes/food');
+var waste = require('./routes/waste');
 
 // Example route
 // var user = require('./routes/user');
@@ -46,6 +49,9 @@ app.get('/month', month.view);
 app.get('/profile', profile.view);
 app.get('/tips', tips.view);
 app.get('/addpage', addpage.view);
+app.get('/commute', commute.view);
+app.get('/food', food.view);
+app.get('/waste', waste.view);
 // Example route
 // app.get('/users', user.list);
 
