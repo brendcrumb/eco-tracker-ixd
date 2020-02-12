@@ -10,31 +10,60 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style>
+		.button {
+	  	background-color: #1c87c9;
+	    border: none;
+	    color: white;
+	    padding: 20px 34px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 20px;
+	    margin: 0 auto;
+	    cursor: pointer;
+	    }
+		button-center {
+			text-align: center;
+		}
+	</style>
+
 </head>
 
 <body>
-	<div class="jumbotron">
-   <h2 class="text-center">Goals</h2>
+	<header>
+   <h3 class="text-center">Goals</h3>
+ </header>
  </div>
 
- <div class="jumbotron">
- 		<h4>Goal 1</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
- 		<h4>Goal 2</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
- 		<h4>Goal 3</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
- 		<h4>Goal 4</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
+<div>
+		<h4 class="text-center">short term</h4>
+		<div class="text-xs-center">Goal 1</div>
+		<div class="progress">
+			<div class="progress-bar bg-dark" role="progressbar" style="width: 40%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">40%</div>
+		</div>
+		<br>
+		<div class="text-xs-center">Goal 2</div>
+		<div class="progress">
+			<div class="progress-bar bg-dark" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</div>
+		</div>
+ 		<br>
+		<h4 class="text-center">long term</h4>
+		<div class="text-xs-center">Goal 3</div>
+		<div class="progress">
+			<div class="progress-bar bg-dark" role="progressbar" style="width: 30%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">20%</div>
+		</div>
+		<br>
+		<div class="text-xs-center">Goal 4</div>
+		<div class="progress">
+			<div class="progress-bar bg-dark" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
+		</div>
  	</div>
+	<br>
+	<div style="text-align:center;">
+		<a href="addGoalPage" class="button">add goal</a>
+	</div>
+
 
  <p>
   <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-center  fixed-bottom">

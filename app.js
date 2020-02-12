@@ -14,6 +14,7 @@ var goal = require('./routes/goal');
 var month = require('./routes/month');
 var profile = require('./routes/profile');
 var tips = require('./routes/tips');
+var addgoalpage = require('./routes/addgoalpage');
 
 // Example route
 // var user = require('./routes/user');
@@ -46,6 +47,7 @@ app.get('/month', month.view);
 app.get('/profile', profile.view);
 app.get('/tips', tips.view);
 app.get('/addpage', addpage.view);
+app.get('/addgoalpage', addgoalpage.view);
 // Example route
 // app.get('/users', user.list);
 
