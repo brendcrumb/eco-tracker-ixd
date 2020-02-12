@@ -1,9 +1,15 @@
 .jumbotron{
 	background-color: transparent !important;
 }
-h2, h1{
+h1{
 	text-align: center;
+	color: #25CA5D;
 }
+h4{
+	text-align: center;
+	color: darkgrey;
+}
+
 .dot{
 	height: 200px;
 	width: 200px;
@@ -42,6 +48,7 @@ body{
     height: 100%;
 }
 
+<<<<<<< HEAD
 .wrapFullWidthButton {
 	width: 50%;
 	height: 50%;
@@ -51,6 +58,8 @@ body{
 	background: #fafafa;
 }
 
+=======
+>>>>>>> 88d4e0e796b8da613ad83d78e32598fc805c70e1
 .wrap {
     width: 100%;
     height: 100%;
