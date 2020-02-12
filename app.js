@@ -17,6 +17,7 @@ var tips = require('./routes/tips');
 var commute = require('./routes/commute');
 var food = require('./routes/food');
 var waste = require('./routes/waste');
+var login = require('./routes/login');
 
 // Example route
 // var user = require('./routes/user');
@@ -42,8 +43,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/index', index.view);
 app.get('/goal', goal.view);
 app.get('/month', month.view);
 app.get('/profile', profile.view);
