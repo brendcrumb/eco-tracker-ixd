@@ -41,6 +41,16 @@ body{
     line-height: 1.6;
     height: 100%;
 }
+
+.wrapFullWidthButton {
+	width: 50%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fafafa;
+}
+
 .wrap {
     width: 100%;
     height: 100%;
