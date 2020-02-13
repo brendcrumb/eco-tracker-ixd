@@ -46,23 +46,31 @@
  </div>
 </div>
 
- <div class="jumbotron">
- 		<h4>Goal 1</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
- 		<h4>Goal 2</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
- 		<h4>Goal 3</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
- 		<h4>Goal 4</h4>
- 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
- 			Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
- 			Nunc ac ex finibus, ornare elit ut, laoreet neque.</p>
+<body>
+	<div class = "container">
+
+	<h1>My Goals</h1>
+	{{#each goals}}
+		<div>
+			<p>{{goalCat}}</p>
+			<h5>{{goalText}}</h5>
+		</div>
+	{{/each}}
+	</div>
+</body>
+
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Category</label>
+    <input type="text" class="form-control" id="goalCat" placeholder="Commute, Food, Waste, etc.">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Goal</label>
+    <input type="text" class="form-control" id="goalText" placeholder="I want to ...">
+  </div>
+  <button type="submit" class="btn btn-primary">Add Goal</button>
+</form>
+
 =======
 <div>
 		<h4 class="text-center">short term</h4>
