@@ -1,9 +1,20 @@
 .jumbotron{
 	background-color: transparent !important;
 }
-h1, h2{
+h1{
 	text-align: center;
-	color: #25CA5D;
+}
+h2{
+    padding-top: 20px;
+
+}
+.profilecss h2{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.profilecsse h2{
+    padding-top: 30px;
+
 }
 h4{
 	text-align: center;
