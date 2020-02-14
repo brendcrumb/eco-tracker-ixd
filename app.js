@@ -19,6 +19,7 @@ var waste = require('./routes/waste');
 var login = require('./routes/login');
 var addgoalpage = require('./routes/addgoalpage');
 var commute = require('./routes/commute');
+var addgoal = require('./routes/addgoal');
 
 // Example route
 // var user = require('./routes/user');
