@@ -41,8 +41,12 @@
 <!--
 <div class="wrapFullWidthButton">
  <div class="input">
+<<<<<<< HEAD
 		 <a href="/addgoal" class="form-button" type="submit">Add Goal</a>
 -->
+=======
+		 <a href="addgoal" class="form-button" type="submit">Add Goal</a>
+>>>>>>> 5d984118324641ce769c4ff3a2afd997cfb9630b
 		 <!-- comment
 		 <button class="form-button" type="submit">Login</button>
  -->
@@ -58,11 +62,19 @@
 			<h5 class = "greyText">{{goalText}}</h5>
 		</div>
 	{{/each}}
+	<p id="newgoal"></p>
+	<h5 id="newtext"></h5>
 	</div>
+	<br>
 </body>
+<<<<<<< HEAD
 
 <!--
 <form id="addGoalForm" role="form" method="get" action="/addgoal">
+=======
+<div class="container">
+<form id="addGoalForm" role="form" method="get" action="addgoal">
+>>>>>>> 5d984118324641ce769c4ff3a2afd997cfb9630b
   <div class="form-group">
     <label for="formGroupExampleInput">Category</label>
     <input type="text" class="form-control" id="goalCat" placeholder="Commute, Food, Waste, etc.">
@@ -71,8 +83,9 @@
     <label for="formGroupExampleInput2">Goal</label>
     <input type="text" class="form-control" id="goalText" placeholder="I want to ...">
   </div>
-  <button type="submit" class="btn btn-primary">Add Goal</button>
+  <button type="button" class="btn btn-primary" onclick="addNewGoal()">Add Goal</button>
 </form>
+</div>
  <div class="jumbotron">
  		<h4>Goal 1</h4>
  		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies et urna ut lacinia.
@@ -164,5 +177,13 @@
       </li>
     </ul>
   </nav>
+    <script>
+    function addNewGoal(){
+     var cat = document.getElementById('goalCat').value;
+     var goal = document.getElementById('goalText').value;
+     document.getElementById('newgoal').innerHTML = cat;
+	 document.getElementById('newtext').innerHTML = goal;
+    }
+  </script>
 </body>
 </html>
