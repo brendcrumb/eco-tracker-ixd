@@ -15,11 +15,10 @@ var month = require('./routes/month');
 var profile = require('./routes/profile');
 var tips = require('./routes/tips');
 var food = require('./routes/food');
-var commute = require('./routes/commute');
 var waste = require('./routes/waste');
 var login = require('./routes/login');
 var addgoalpage = require('./routes/addgoalpage');
-var commute_logpage = require('./routes/commute_logpage');
+var commute = require('./routes/commute');
 
 // Example route
 // var user = require('./routes/user');
@@ -53,10 +52,9 @@ app.get('/profile', profile.view);
 app.get('/tips', tips.view);
 app.get('/addpage', addpage.view);
 app.get('/food', food.view);
-app.get('/commute', commute.view);
 app.get('/waste', waste.view);
 app.get('/addgoalpage', addgoalpage.view);
-app.get('/commute_logpage', commute_logpage.view);
+app.get('/commute', commute.view);
 // Example route
 // app.get('/users', user.list);
 
