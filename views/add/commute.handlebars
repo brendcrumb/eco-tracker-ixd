@@ -11,42 +11,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<style>
-		.dropbtn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {background-color: #ddd;}
-    .dropdown:hover .dropdown-content {display: block;}
-    .dropdown:hover .dropbtn {background-color: #3e8e41;}
-    
-	</style>
-
 </head>
 
 <body>
@@ -72,8 +36,8 @@
 	  <p>Miles: <span id="demo"></span></p>
   <br>
 	</div>
-  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-    Add
+  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="updateSummary()">
+    Save
   </button>
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -81,13 +45,13 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Add Successful!</h4>
+          <h4 class="modal-title">Progress Saved!</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body">
-          Your commute has been recorded! Click the button to check your updated summary.
+          Your commute has been recorded! You can either see your updated summary or add more progress.
         </div>
         
         <!-- Modal footer -->
@@ -155,6 +119,14 @@
     	slider.oninput = function() {
     	  output.innerHTML = this.value;
     	}
+      function updateSummary(){
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        var miles = slider.value;
+        //sessionStorage.removeItem('commute');
+        sessionStorage.setItem('commute', miles);
+      }
 
       //function myFunction() {
       //var miles = document.getElementById("myRange").value;
