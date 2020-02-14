@@ -145,3 +145,14 @@ body{
   background: #4CAF50;
   cursor: pointer;
 }
+
+.sharebutton{
+  text-align: center;
+  vertical-align: middle;
+  color: #28A745;
+}
+
+#profilep{
+  font-family: "SF Pro Text";
+  font-size: 18px;
+}
