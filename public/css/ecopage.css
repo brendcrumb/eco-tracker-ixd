@@ -52,8 +52,9 @@ html{
 h3{
 	color: #25CA5D;
 }
+
 body{
-    font-family: 'SF Pro Text';
+    font-family: 'SF Pro Display';
     font-size: 1rem;
     line-height: 1.6;
     height: 100%;
@@ -152,7 +153,50 @@ body{
   color: #28A745;
 }
 
+
+.profileimg{
+  position: absolute;
+}
+
+.profiledescription{
+  position: relative;
+  overflow: auto;
+  text-align: center;
+}
+
 #profilep{
-  font-family: "SF Pro Text";
-  font-size: 18px;
+  font-family: "SF Pro Display";
+  font-size: 24px;
+  margin: 5px;
+}
+
+#profile2{
+font-family: SF Pro Display;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+text-align: left;
+color: #000000;
+}
+
+#profile1{
+font-family: SF Pro Display;
+margin: 0;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+color: #000000;
+}
+
+.topgoals{
+  margin-left: 10px;
+}
+
+.profilegoals{
+  margin-left: 20px;
+}
+
+#profilesub{
+  font-size: 24px;
+  text-decoration: underline;
 }
