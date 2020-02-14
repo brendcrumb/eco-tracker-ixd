@@ -10,6 +10,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<!--
 	<style>
 		.button {
 	  	background-color: #1c87c9;
@@ -27,6 +29,7 @@
 			text-align: center;
 		}
 	</style>
+--->
 
 </head>
 
@@ -35,10 +38,11 @@
 		<h2 class="text-center">Goals</h2>
 	</div>
 
-
+<!--
 <div class="wrapFullWidthButton">
  <div class="input">
 		 <a href="/addgoal" class="form-button" type="submit">Add Goal</a>
+-->
 		 <!-- comment
 		 <button class="form-button" type="submit">Login</button>
  -->
@@ -49,14 +53,15 @@
 
 	<h1>My Goals</h1>
 	{{#each goals}}
-		<div>
-			<p>{{goalCat}}</p>
-			<h5>{{goalText}}</h5>
+		<div class = "textGroupBorder">
+			<p class = "greenText">{{goalCat}}</p>
+			<h5 class = "greyText">{{goalText}}</h5>
 		</div>
 	{{/each}}
 	</div>
 </body>
 
+<!--
 <form id="addGoalForm" role="form" method="get" action="/addgoal">
   <div class="form-group">
     <label for="formGroupExampleInput">Category</label>
@@ -112,7 +117,7 @@
 	<div style="text-align:center;">
 		<a href="addGoalPage" class="button">add goal</a>
 	</div>
-
+-->
 
  <p>
 <nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom">
