@@ -11,28 +11,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<script src="routes/facebook.js"></script>
-	<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{eco-tracker-ixd}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{v3.2}'
-    });
-     
-    FB.AppEvents.logPageView();   
-      
-  };
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
+	{{> facebook}}
+	<script src="/facebook.js"></script>
 </head>
 
 <body>
@@ -54,11 +34,16 @@
             <div class="input">
                 <a href="/index" class="form-button" type="submit">Login</a>
             </div>
-            	<p class="facebookLogin">
-            		Login through Facebook
-				<fb:login -button scope="public_profile,email" onlogin="checkLoginState();">
-				</fb:login -button>
+
+            	<div>
+            	<p class= "image-center">
+            		Login with FB
+				<fb:login-button 
+  					scope="public_profile,email"
+  					onlogin="checkLoginState();">
+				</fb:login-button>
 				</p>
+				</div>
 
             <div class="form-footer">
             Need an account? <a href="#">Sign Up Here</a>
