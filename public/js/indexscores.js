@@ -27,8 +27,8 @@ function initializePage() {
    // var cbarscore = parseFloat(commutebar);
 
      // calculate and update new score
-     var cbarscore = Math.round(commutebar*.10194);
-     cbarscore = Math.round((cbarscore)*10)/10;    
+     var cbarscore = Math.round(commutebar*1.0194);
+     cbarscore = Math.round((cbarscore)*10)/100;    
      cbarscore = cbarscore + coscores;
 
     var oldScore = sessionStorage.getItem('prevScore');
@@ -40,7 +40,7 @@ function initializePage() {
      sessionStorage.removeItem('commute');
 
      $('#cpb').html(cbarscore + " liters");
-     $('#cpb').css("width", (cbarscore*35));
+     $('#cpb').css("width", (cbarscore*33));
      //update emmission score
      var eScore = cbarscore+wscores+fscores;
      $("#score").html(eScore+"L");
