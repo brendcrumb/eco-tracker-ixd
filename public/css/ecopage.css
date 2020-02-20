@@ -228,3 +228,11 @@ color: #000000;
   font-size: 24px;
   text-decoration: underline;
 }
+
+.popup-overlay {
+visibility:hidden;
+}
+
+.popup-content {
+visibility:hidden;
+}
