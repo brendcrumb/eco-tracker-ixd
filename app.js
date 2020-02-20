@@ -57,7 +57,7 @@ app.get('/waste', waste.view);
 app.get('/addgoalpage', addgoalpage.view);
 app.get('/commute', commute.view);
 // Example route
-app.get('/routes', addgoal.addGoal);
+app.get('/addgoal', addgoal.addGoal);
 // app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

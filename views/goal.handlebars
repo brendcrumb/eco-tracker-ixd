@@ -64,8 +64,6 @@
 			<h5 class = "greyText">{{goalText}}</h5>
 		</div>
 	{{/each}}
-	<p id="newgoal"></p>
-	<h5 id="newtext"></h5>
 	</div>
 	<br>
 </body>
@@ -87,7 +85,7 @@ form id="addGoalForm" role="form" method="get" action="/addgoal">
     <label for="formGroupExampleInput2">Goal</label>
     <input type="text" class="form-control" id="goalText" placeholder="I want to ...">
   </div>
-  <button type="button" class="btn btn-primary" onclick="addNewGoal()">Add Goal</button>
+  <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
 </form>
 <!--
 </div>
