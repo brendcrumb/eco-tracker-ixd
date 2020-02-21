@@ -6,6 +6,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/ecopage.css" rel="stylesheet">
+	<link href="css/profile.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -23,36 +25,45 @@
 	    font-size: 20px;
 	    margin: 0 auto;
 	    cursor: pointer;
-			text-align: center;
+		text-align: center;
 		}
 	   </style>
 </head>
 
-<body>
-  <div class="profilecsse">
-	<h2 class="text-center">Profile</h2>
-</div>
+<body id="profilebody">
 <br>
-<div class="image-center">
+<aside class="profile-card">
+  
+  <header>
+    
+    <div class="image-center">
 		<img src="ecojoe.png" class="rounded" height='150' width='150'/>
-</div>
-<br>
-
-<div class="profiledescription">
-		<p id="profilep">John Smith</p>
- 		<p id='profile1'>I'm an awesome saxophone player who's trying to do his part to save the planet!</p>
-		<p id="profile1">Tracking my emissions is a lot easier with Eco-Tracker :)</p>
- 	</div>
- <br>
-<div class="topgoals">
-	<h3 id="profilesub"> My Top Goals </h3>
-	<br>
-	<div class="profilegoals">
-	<p id='profile2'> Average less than 15l of emissions per day! </p>
-	<p id='profile2'> Use methods of transportation that reduce my commute emissions.</p>
-	<p id='profile2'> Track everyday for at least one month. </p>
 	</div>
+<br>
+    <h1 class="image-center" id="profileh1">John Smith</h1>
+    
+  </header>
+  <br>
+  <div class="profile-bio">
+    
+    <p class="image-center">I'm an awesome saxophone player who's trying to do his part to save the planet!</p>
+    <p class="image-center">Tracking my emissions is a lot easier with Eco-Tracker :)</p>
+    
+  </div>
+
+  <br>
+  <h3 class="image-center" id="profileh2">Get to Know Me!</h3>
+
+  <div class="center-div">
+  <ul id="profile-social-links">
+    <li>
+     <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+	<a href="https://twitter.com/" class="fa fa-twitter"></a>
+	<a href="https://instagram.com/" class="fa fa-instagram"></a>
+    </li>
+  </ul>
 </div>
+</aside>
 <br>
 
 <nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom">
@@ -100,41 +111,5 @@
     </ul>
   </nav>
 
-
-  <script>
-    // calculate the new progress bar from input for commute
-    var commutebar = sessionStorage.getItem('commute');
-    var cprogress = document.getElementById("cpb").style.width;
-    var commutepr = parseFloat(cprogress);
-    var percent = parseFloat(commutebar) + commutepr;
-    //console.log(commutebar);
-    //console.log(commutepr);
-    //console.log(percent);
-    var finalpercent = Math.round(percent*0.7);
-    // calculate new score
-      var cscore = Math.round((finalpercent/15)*10)/10;
-      //commute score
-      var coscore = document.getElementById("cpb").innerHTML;
-      coscore = coscore.replace(/[^\d.-]/g, '');
-      var coscores = parseFloat(coscore);
-      //waste score
-      var wscore = document.getElementById("wpb").innerHTML;
-      wscore = wscore.replace(/[^\d.-]/g, '');
-      var wscores = parseFloat(wscore);
-      //food score
-      var fscore = document.getElementById("fpb").innerHTML;
-      fscore = fscore.replace(/[^\d.-]/g, '');
-      var fscores = parseFloat(fscore);
-    if(commutebar > 26){    
-      //console.log(finalpercent);
-      document.getElementById("cpb").innerHTML = Math.round((finalpercent/15)*10)/10 +" liters";
-      document.getElementById("cpb").style.width = (finalpercent)+"%";
-      document.getElementById("score").innerHTML = cscore+wscores+fscores+"L";
-    }
-    else{
-      document.getElementById("cpb").style.width = (commutepr)+"%";
-      document.getElementById("score").innerHTML = coscores+wscores+fscores+"L";
-    }
-  </script>
 </body>
 </html>
