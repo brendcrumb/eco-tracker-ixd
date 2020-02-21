@@ -239,7 +239,7 @@ visibility:hidden;
 }
 
 .testmodal{
-	/*display none*/
+	display none;
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -269,6 +269,7 @@ visibility:hidden;
 	text-decoration: none;
 	cursor:pointer;
 }
+<<<<<<< HEAD
 .button {
   background-color: #4CAF50;
   border: none;
@@ -281,3 +282,6 @@ visibility:hidden;
   margin: 4px 2px;
   cursor: pointer;
 }
+=======
+
+>>>>>>> 448443a00aaa0bb2fad97edc791fc3aec2903600

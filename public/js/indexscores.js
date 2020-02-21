@@ -26,7 +26,18 @@ function initializePage() {
     else{commutebar = parseFloat(commutebar);}
      // calculate and update new score
      var cbarscore = Math.round(commutebar*1.0194);
+<<<<<<< HEAD
      cbarscore = Math.round((cbarscore)*10)/100;
+=======
+     var tmode = sessionStorage.getItem('mode');
+     if(tmode === "Walk"){ cbarscore = commutebar*0.3398;}
+     else if(tmode === "Bike/Scooter"){ cbarscore = commutebar*0.6796;}
+     else if(tmode === "Plane"){ cbarscore = commutebar*2.3862;}
+     else if(tmode === "Bus"){ cbarscore = commutebar*0.8342;}
+     else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.7372;}
+     else{cbarscore = commutebar*1.0194;}
+     cbarscore = Math.round((cbarscore)*10)/100;    
+>>>>>>> 448443a00aaa0bb2fad97edc791fc3aec2903600
      cbarscore = cbarscore + coscores;
      // tracks score to avoid repeat addition
     var oldScore = sessionStorage.getItem('prevScore');
