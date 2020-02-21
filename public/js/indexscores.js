@@ -26,7 +26,7 @@ function initializePage() {
     else{commutebar = parseFloat(commutebar);}
      // calculate and update new score
      var cbarscore = Math.round(commutebar*1.0194);
-     cbarscore = Math.round((cbarscore)*10)/100;    
+     cbarscore = Math.round((cbarscore)*10)/100;
      cbarscore = cbarscore + coscores;
      // tracks score to avoid repeat addition
     var oldScore = sessionStorage.getItem('prevScore');
@@ -50,7 +50,7 @@ function initializePage() {
      // update UI
      $('#cpb').html(cbarscore + " liters");
      $('#cpb').css("width", (cbarscore*33));
-     
+
     //// WASTE
       var wastebar = sessionStorage.getItem('waste');
       if(wastebar == null || isNaN(wastebar)){wastebar = 0;}
@@ -61,7 +61,7 @@ function initializePage() {
       var wbarscore = wastebar*0.3672;
       console.log("inWaste2: " + wastebar);
       wbarscore = (Math.round((wbarscore)*10)/10);
-      console.log("waste: " + wbarscore);    
+      console.log("waste: " + wbarscore);
       wbarscore = wbarscore + wscores;
       var oldWaste = sessionStorage.getItem('prevScoreW');
       oldWaste = parseFloat(oldWaste);
@@ -83,6 +83,39 @@ function initializePage() {
       $('#wpb').html(wbarscore + " liters");
       $('#wpb').css("width", (wbarscore*33));
 
+	/// FOOD BAR
+			var foodbar = sessionStorage.getItem('food');
+			if(foodbar == null || isNaN(foodbar)){foodbar = 0;}
+			else{
+				foodbar = parseFloat(foodbar);
+			}
+			console.log("food1: "+ foodbar);
+			var fbarscore = foodbar*0.8;
+			console.log("food2: "+ foodbar);
+			fbarscore = (Math.round((fbarscore)*10)/10);
+			console.log("food3: "+ fbarscore);
+			fbarscore = fbarscore + fscores;
+			var oldfood = sessionStorage.getItem('prevScoreF');
+			oldWaste = parseFloat(oldfood);
+			if(isNaN(oldfood) || (oldfood-fbarscore == 0)) {
+					var updater = sessionStorage.getItem('updater');
+					updater = parseFloat(updater);
+					if (updater == 1) {
+						oldfood = oldfood;
+					}
+					else {
+						oldfood = 0
+					}
+			}
+			sessionStorage.removeItem('updater');
+			fbarscore = fbarscore + oldfood;
+			fbarscore = Math.round((fbarscore)*10)/10;
+			sessionStorage.setItem('prevScoreF', fbarscore);
+			sessionStorage.removeItem('waste');
+			$('#fpb').html(fbarscore + " liters");
+			$('#fpb').css("width", (fbarscore*33));
+
+
       //update emmission score
      var eScore = parseFloat(cbarscore)+parseFloat(wbarscore)+parseFloat(fscores);
      eScore = Math.round((eScore)*10)/10;
@@ -91,7 +124,7 @@ function initializePage() {
       var yellowBound = Number(10);
       var redBound = Number(18);
       if(eScore >= redBound)
-        { 
+        {
           console.log("overRed");
           $('.circle').css("border-color", "#881313");
         }
@@ -109,7 +142,7 @@ function initializePage() {
       console.log("total: " + cbarscore);
       console.log("waste: " + wbarscore);
       console.log("eScore: " + eScore);
-      
+
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 }
