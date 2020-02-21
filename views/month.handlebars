@@ -16,7 +16,6 @@
     <script src='js/day-main.js'></script>
     <script src='js/interaction-main.js'></script>
     <script>
-
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
 
@@ -24,18 +23,39 @@
           plugins: [ 'dayGrid' ]
         });
 
-        calendar.render();
-      });
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: [ 'interaction', 'dayGrid' ],
+          defaultView: 'dayGridMonth',
+          selectable: true
+        });
 
+        calendar.render();
+        });
     </script>
+
           <script>
-          var calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: [ 'interaction', 'dayGrid' ],
-            defaultView: 'dayGridMonth',
-            selectable: true
-          });
+              document.addEventListener('DOMContentLoaded', function() {
+              var calendarEl = document.getElementById('calendar');
+
+              var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
+                selectable: true,
+                header: {
+                  left: 'prev,next today',
+                  center: 'title',
+                  right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                dateClick: function(info) {
+                  alert('clicked ' + info.dateStr);
+                },
+                select: function(info) {
+                  alert('selected ' + info.startStr + ' to ' + info.endStr);
+                }
+              });
           </script>
+
   </head>
+  
   <body>
     <br>
     <br>
@@ -98,40 +118,6 @@
     </ul>
   </nav>
 
-  <script>
-    // calculate the new progress bar from input for commute
-    var commutebar = sessionStorage.getItem('commute');
-    var cprogress = document.getElementById("cpb").style.width;
-    var commutepr = parseFloat(cprogress);
-    var percent = parseFloat(commutebar) + commutepr;
-    //console.log(commutebar);
-    //console.log(commutepr);
-    //console.log(percent);
-    var finalpercent = Math.round(percent*0.7);
-    // calculate new score
-      var cscore = Math.round((finalpercent/15)*10)/10;
-      //commute score
-      var coscore = document.getElementById("cpb").innerHTML;
-      coscore = coscore.replace(/[^\d.-]/g, '');
-      var coscores = parseFloat(coscore);
-      //waste score
-      var wscore = document.getElementById("wpb").innerHTML;
-      wscore = wscore.replace(/[^\d.-]/g, '');
-      var wscores = parseFloat(wscore);
-      //food score
-      var fscore = document.getElementById("fpb").innerHTML;
-      fscore = fscore.replace(/[^\d.-]/g, '');
-      var fscores = parseFloat(fscore);
-    if(commutebar > 26){    
-      //console.log(finalpercent);
-      document.getElementById("cpb").innerHTML = Math.round((finalpercent/15)*10)/10 +" liters";
-      document.getElementById("cpb").style.width = (finalpercent)+"%";
-      document.getElementById("score").innerHTML = cscore+wscores+fscores+"L";
-    }
-    else{
-      document.getElementById("cpb").style.width = (commutepr)+"%";
-      document.getElementById("score").innerHTML = coscores+wscores+fscores+"L";
-    }
-  </script>
 </body>
+
 </html>
