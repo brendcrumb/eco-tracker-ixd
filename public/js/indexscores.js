@@ -98,7 +98,7 @@ function initializePage() {
 				foodbar = parseFloat(foodbar);
 			}
 			console.log("food1: "+ foodbar);
-			var fbarscore = foodbar*0.8;
+			var fbarscore = foodbar*2;
 			console.log("food2: "+ foodbar);
 			fbarscore = (Math.round((fbarscore)*10)/10);
 			console.log("food3: "+ fbarscore);
@@ -119,7 +119,7 @@ function initializePage() {
 			fbarscore = fbarscore + oldfood;
 			fbarscore = Math.round((fbarscore)*10)/10;
 			sessionStorage.setItem('prevScoreF', fbarscore);
-			sessionStorage.removeItem('waste');
+			sessionStorage.removeItem('food');
 			$('#fpb').html(fbarscore + " liters");
 			$('#fpb').css("width", (fbarscore*33));
 
