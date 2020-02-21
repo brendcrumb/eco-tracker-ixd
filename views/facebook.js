@@ -1,7 +1,6 @@
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
-    window.location = "index.handlebars";
   });
 }
 
@@ -14,7 +13,8 @@ function statusChangeCallback(response) {
   // for FB.getLoginStatus().
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
+        window.location = '/index';
         console.log('Successfully logged in with Facebook');
-         FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
+        FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
   }
 }
