@@ -239,7 +239,7 @@ visibility:hidden;
 }
 
 .testmodal{
-	/*display none*/
+	display none;
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -269,3 +269,4 @@ visibility:hidden;
 	text-decoration: none;
 	cursor:pointer;
 }
+

@@ -17,6 +17,7 @@
    <h2 class="text-center">Tips</h2>
  </div>
 
+<!-- MODAL EXPERIMENTATION
 <button id="modalBtn" class="form-button">Click Here</button>
 
 <div id="simpleModal" class="testmodal">
@@ -25,19 +26,53 @@
 		<p>Hello...I am a modal</p>
 	</div>
 </div>
+-->
 
 <div class="jumbotron">
+	<div>
 		<h4 class = "greenText">Tip 1</h4>
 		<p id = "tipGroup" class = "textGroupBorderGreen" class = "greyText">Carpooling helps to reduce the amount of gas used per person, thus reducing the amount of emissions released!</p>
+	</div>
+	<div>
 		<h4 class = "greenText">Tip 2</h4>
 		<p class = "textGroupBorderGreen" class = "greyText">Using a reusable water bottle will cut down on the amount of single use plastics used.</p>
+	</div>
+	<div>
 		<h4 class = "greenText">Tip 3</h4>
 		<p class = "textGroupBorderGreen" class = "greyText">Reduce red meat consumptions as cows release a lot of methane, a powerful greenhouse gas.</p>
+	</div>
+	<div>
 		<h4 class = "greenText">Tip 4</h4>
 		<p class = "textGroupBorderGreen" class = "greyText">Take the bus when commuting to further reduce your carbon footprint!</p>
 	</div>
+	</div>
 
+	<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Progress Saved!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Your commute has been recorded! You can either see your updated summary or add more progress.
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <a href="index" class="btn btn-success" role="button">To Summary</a>
+          <a href="addpage" class="btn btn-secondary" role="button">Add More</a>
+          <!--
+          <button type="button" class="btn btn-success" data-dismiss="modal">To Summary</button> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
 
  <p>
  <nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom">
