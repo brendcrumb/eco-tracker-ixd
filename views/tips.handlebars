@@ -27,7 +27,7 @@
 	</div>
 </div>
 -->
-
+<!--
 <div class="jumbotron">
 	<div>
 		<h4 class = "greenText">Tip 1</h4>
@@ -44,31 +44,59 @@
 	<div>
 		<h4 class = "greenText">Tip 4</h4>
 		<p class = "textGroupBorderGreen" class = "greyText">Take the bus when commuting to further reduce your carbon footprint!</p>
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
+	    Share
+	  </button>
 	</div>
 	</div>
+-->
 
-	<div class="modal" id="myModal">
+	<body>
+		<div class = "container">
+
+		{{#each tips}}
+			<div class = "textGroupBorder">
+				<p class = "greenText">Tip {{tipNum}}</p>
+				<h5 class = "greyText">{{tipText}}</h5>
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
+			    Share
+			  </button>
+			</div>
+		{{/each}}
+		</div>
+		<br>
+	</body>
+
+	<div class="modal" id="tipsModal">
     <div class="modal-dialog">
       <div class="modal-content">
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Progress Saved!</h4>
+          <h4 class="modal-title">Link copied to clipboard!</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
 
         <!-- Modal body -->
+<!--
         <div class="modal-body">
+
           Your commute has been recorded! You can either see your updated summary or add more progress.
         </div>
+			-->
+
 
         <!-- Modal footer -->
+
         <div class="modal-footer">
-          <a href="index" class="btn btn-success" role="button">To Summary</a>
+          <a href="tips" class="btn btn-success" role="button">Close</a>
+					<!--
           <a href="addpage" class="btn btn-secondary" role="button">Add More</a>
-          <!--
-          <button type="button" class="btn btn-success" data-dismiss="modal">To Summary</button> -->
+
+          <button type="button" class="btn btn-success" data-dismiss="modal">To Summary</button>
+				-->
         </div>
+
 
       </div>
     </div>
@@ -119,5 +147,7 @@
       </li>
     </ul>
   </nav>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.js"></script>
 </body>
 </html>

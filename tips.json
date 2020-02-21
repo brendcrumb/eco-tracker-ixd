@@ -1,0 +1,20 @@
+{
+  "tips": [
+    {
+      "tipNum": "1",
+      "tipText": "Carpooling helps to reduce the amount of gas used per person, thus reducing the amount of emissions released!"
+    },
+    {
+      "tipNum": "2",
+      "tipText": "Using a reusable water bottle will cut down on the amount of single use plastics used."
+    },
+    {
+      "tipNum":"3",
+      "tipText": "Reduce red meat consumptions as cows release a lot of methane, a powerful greenhouse gas."
+    },
+    {
+      "tipNum": "4",
+      "tipText": "Take the bus when commuting to further reduce your carbon footprint!"
+    }
+  ]
+}

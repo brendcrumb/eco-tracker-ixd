@@ -2,8 +2,10 @@
  * GET tips page.
  */
 
+var tipData = require('../tips.json');
+
 exports.view = function(req, res){
-  res.render('tips');
+  res.render('tips', tipData);
 };
 
 /*
