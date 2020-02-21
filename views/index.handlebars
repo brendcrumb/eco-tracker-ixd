@@ -10,6 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/indexscores.js"></script>
+
 </head>
 
 <body>
@@ -28,24 +30,24 @@
 		
 		<div class="text-center profilecss">
       <h2>Today's Emmisions</h2>
-			<span class="dot" id="ccolor">
-				<h1 id="score">9.8L</h1>
-			</span>
+			<div class="circle" id="ccolor">
+				<h1 id="score">0.0L</h1>
+			</div>
 		</div>
 		<br>
 		<div class="text-xs-center">Commute</div>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="cpb">3.1 liters</div>
+			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="cpb">0.0 liters</div>
 		</div>
 		<br>
 		<div class="text-xs-center">Food</div>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="fpb">4 liters</div>
+			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="fpb">0.0 liters</div>
 		</div>
 		<br>
 		<div class="text-xs-center">Waste</div>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 28%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="wpb">2.4 liters</div>
+			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="wpb">0.0 liters</div>
 		</div>
 
 
@@ -103,56 +105,5 @@
       </li>
     </ul>
   </nav>
-  <script>
-    //commute score
-      var coscore = document.getElementById("cpb").innerHTML;
-      coscore = coscore.replace(/[^\d.-]/g, '');
-      var coscores = parseFloat(coscore);
-      //waste score
-      var wscore = document.getElementById("wpb").innerHTML;
-      wscore = wscore.replace(/[^\d.-]/g, '');
-      var wscores = parseFloat(wscore);
-      //food score
-      var fscore = document.getElementById("fpb").innerHTML;
-      fscore = fscore.replace(/[^\d.-]/g, '');
-      var fscores = parseFloat(fscore);
-    // calculate the new progress bar from input for commute
-    var commutebar = sessionStorage.getItem('commute');
-    if(commutebar == null){commutebar = 0;}
-    //var cprogress = document.getElementById("cpb").style.width;
-    //var cprogress = parseFloat(cprogress);
-    var oldScore = sessionStorage.getItem('prevScore');
-    if(isNaN(oldScore)){oldScore = 0;}
-            console.log("oldScore: " + oldScore);
-    var percent = parseFloat(commutebar) + coscores + parseFloat(oldScore - coscores);
-          sessionStorage.setItem('prevScore', percent);
-    console.log("getCommute: " + commutebar);
-    console.log("currCommute: " + coscores);
-    console.log("total: " + percent);
-    var finalpercent = Math.round(percent*1.0194);
-    // calculate new score
-      var cscore = Math.round((finalpercent)*10)/100;
-    // calculate new scores
-      document.getElementById("cpb").innerHTML = cscore +" liters";
-      document.getElementById("cpb").style.width = (finalpercent*1.1)+"%";
-      var eScore = cscore+wscores+fscores;
-      console.log(eScore);
-      document.getElementById("score").innerHTML = eScore + "L";
-    // Change color of circle
-      var redBound = Number(5);
-      var yellowBound = Number(3);
-      eScore = Number(eScore);
-      if(eScore < yellowBound)
-        {document.getElementById("ccolor").style.borderColor = "yellow";}
-      else if(eScore < redBound)
-        {document.getElementById("ccolor").style.borderColor = "red";}
-      else{document.getElementById("ccolor").style.borderColor = "green";}
-    //}
-    /*
-    else{
-      document.getElementById("cpb").style.width = (commutepr)+"%";
-      document.getElementById("score").innerHTML = coscores+wscores+fscores+"L";
-    }*/
-  </script>
 </body>
 </html>

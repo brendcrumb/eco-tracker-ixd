@@ -22,11 +22,11 @@
 	  <label for="sel1">Mode of Transportation</label>
 	  <select class="form-control" id="sel1">
 	    <option>Walk</option>
-	    <option>Bike</option>
-	    <option>Scooter</option>
+	    <option>Bike/Scooter</option>
+      <option>Motorcycle</option>
+      <option>Car</option>
 	    <option>Bus</option>
-	    <option>Motorcycle</option>
-	    <option>Car</option>
+      <option>Plane</option>
 	  </select>
 	</div>
 	<br>
@@ -124,8 +124,12 @@
         var output = document.getElementById("demo");
         output.innerHTML = slider.value;
         var miles = slider.value;
-        //sessionStorage.removeItem('commute');
         sessionStorage.setItem('commute', miles);
+        var updater = 1;
+        sessionStorage.setItem('update', updater);
+        var input = $('#sel1 option:selected').text();
+        console.log(input);
+        sessionStorage.setItem('mode', input);
       }
 	</script>
 </body>

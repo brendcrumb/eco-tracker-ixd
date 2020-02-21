@@ -21,16 +21,17 @@ h4{
 	color: darkgrey;
 }
 
-.dot, #ccolor{
+.circle, #ccolor{
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
 	border-width: 9px;
-	border-style: solid !important;
-	border-color: green !important;
+	border-style: solid;
+	border-color: green;
+  background: transparent;
 	display: inline-block;
 }
-.dot h1{
+.circle h1{
 	padding-top: 55px;
 	text-align: center;
 	vertical-align: middle;
