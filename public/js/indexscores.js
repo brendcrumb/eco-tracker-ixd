@@ -97,27 +97,27 @@ function initializePage() {
 			else{
 				foodbar = parseFloat(foodbar);
 			}
-			console.log("food1: "+ foodbar);
-			var fbarscore = foodbar*2;
-			console.log("food2: "+ foodbar);
+      console.log("foodIn: " + foodbar);
+			var fbarscore = foodbar*1.4375;
 			fbarscore = (Math.round((fbarscore)*10)/10);
-			console.log("food3: "+ fbarscore);
 			fbarscore = fbarscore + fscores;
+      console.log("foodBar: " + fbarscore);
 			var oldfood = sessionStorage.getItem('prevScoreF');
-			oldWaste = parseFloat(oldfood);
+			oldfood = parseFloat(oldfood);
 			if(isNaN(oldfood) || (oldfood-fbarscore == 0)) {
-					var updater = sessionStorage.getItem('updater');
-					updater = parseFloat(updater);
-					if (updater == 1) {
+					var updating = sessionStorage.getItem('updating');
+					updating = parseFloat(updating);
+					if (updating == 1) {
 						oldfood = oldfood;
 					}
 					else {
-						oldfood = 0
+						oldfood = 0;
 					}
 			}
-			sessionStorage.removeItem('updater');
+			sessionStorage.removeItem('updating');
 			fbarscore = fbarscore + oldfood;
 			fbarscore = Math.round((fbarscore)*10)/10;
+      console.log("foodBar: " + fbarscore);
 			sessionStorage.setItem('prevScoreF', fbarscore);
 			sessionStorage.removeItem('food');
 			$('#fpb').html(fbarscore + " liters");
@@ -125,7 +125,7 @@ function initializePage() {
 
 
       //update emmission score
-     var eScore = parseFloat(cbarscore)+parseFloat(wbarscore)+parseFloat(fscores);
+     var eScore = parseFloat(cbarscore)+parseFloat(wbarscore)+parseFloat(fbarscore);
      eScore = Math.round((eScore)*10)/10;
      $("#score").html(eScore+"L");
      // Change color of circle
