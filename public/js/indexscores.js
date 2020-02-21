@@ -26,6 +26,7 @@ function initializePage() {
     else{commutebar = parseFloat(commutebar);}
      // calculate and update new score
      var cbarscore = Math.round(commutebar*1.0194);
+     cbarscore = Math.round((cbarscore)*10)/100;
      var tmode = sessionStorage.getItem('mode');
      if(tmode === "Walk"){ cbarscore = commutebar*0.3398;}
      else if(tmode === "Bike/Scooter"){ cbarscore = commutebar*0.6796;}
@@ -33,7 +34,7 @@ function initializePage() {
      else if(tmode === "Bus"){ cbarscore = commutebar*0.8342;}
      else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.7372;}
      else{cbarscore = commutebar*1.0194;}
-     cbarscore = Math.round((cbarscore)*10)/100;    
+     cbarscore = Math.round((cbarscore)*10)/100;
      cbarscore = cbarscore + coscores;
      // tracks score to avoid repeat addition
     var oldScore = sessionStorage.getItem('prevScore');
@@ -57,7 +58,7 @@ function initializePage() {
      // update UI
      $('#cpb').html(cbarscore + " liters");
      $('#cpb').css("width", (cbarscore*33));
-     
+
     //// WASTE
       var wastebar = sessionStorage.getItem('waste');
       if(wastebar == null || isNaN(wastebar)){wastebar = 0;}
@@ -68,7 +69,7 @@ function initializePage() {
       var wbarscore = wastebar*0.3672;
       console.log("inWaste2: " + wastebar);
       wbarscore = (Math.round((wbarscore)*10)/10);
-      console.log("waste: " + wbarscore);    
+      console.log("waste: " + wbarscore);
       wbarscore = wbarscore + wscores;
       var oldWaste = sessionStorage.getItem('prevScoreW');
       oldWaste = parseFloat(oldWaste);
@@ -90,15 +91,48 @@ function initializePage() {
       $('#wpb').html(wbarscore + " liters");
       $('#wpb').css("width", (wbarscore*33));
 
+	/// FOOD BAR
+			var foodbar = sessionStorage.getItem('food');
+			if(foodbar == null || isNaN(foodbar)){foodbar = 0;}
+			else{
+				foodbar = parseFloat(foodbar);
+			}
+      console.log("foodIn: " + foodbar);
+			var fbarscore = foodbar*1.4375;
+			fbarscore = (Math.round((fbarscore)*10)/10);
+			fbarscore = fbarscore + fscores;
+      console.log("foodBar: " + fbarscore);
+			var oldfood = sessionStorage.getItem('prevScoreF');
+			oldfood = parseFloat(oldfood);
+			if(isNaN(oldfood) || (oldfood-fbarscore == 0)) {
+					var updating = sessionStorage.getItem('updating');
+					updating = parseFloat(updating);
+					if (updating == 1) {
+						oldfood = oldfood;
+					}
+					else {
+						oldfood = 0;
+					}
+			}
+			sessionStorage.removeItem('updating');
+			fbarscore = fbarscore + oldfood;
+			fbarscore = Math.round((fbarscore)*10)/10;
+      console.log("foodBar: " + fbarscore);
+			sessionStorage.setItem('prevScoreF', fbarscore);
+			sessionStorage.removeItem('food');
+			$('#fpb').html(fbarscore + " liters");
+			$('#fpb').css("width", (fbarscore*33));
+
+
       //update emmission score
-     var eScore = parseFloat(cbarscore)+parseFloat(wbarscore)+parseFloat(fscores);
+     var eScore = parseFloat(cbarscore)+parseFloat(wbarscore)+parseFloat(fbarscore);
      eScore = Math.round((eScore)*10)/10;
      $("#score").html(eScore+"L");
      // Change color of circle
       var yellowBound = Number(10);
       var redBound = Number(18);
       if(eScore >= redBound)
-        { 
+        {
           console.log("overRed");
           $('.circle').css("border-color", "#881313");
         }
@@ -116,7 +150,7 @@ function initializePage() {
       console.log("total: " + cbarscore);
       console.log("waste: " + wbarscore);
       console.log("eScore: " + eScore);
-      
+
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 }

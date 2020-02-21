@@ -10,7 +10,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+  <style>
+  	body{padding-bottom: 120px;}
+  </style>
 	<!--
 	<style>
 		.button {
@@ -29,6 +31,7 @@
 			text-align: center;
 		}
 	</style>
+	Source of help: https://www.w3schools.com/asp/asp_inputforms.asp
 --->
 
 </head>
@@ -52,12 +55,9 @@
 		 <!-- comment
 		 <button class="form-button" type="submit">Login</button>
  -->
- </div>
-</div>
-<body>
 	<div class = "container">
 
-	<h1>My Goals</h1>
+	<!--<h1>My Goals</h1> -->
 	{{#each goals}}
 		<div class = "textGroupBorder">
 			<p class = "greenText">{{goalCat}}</p>
@@ -80,14 +80,19 @@ form id="addGoalForm" role="form" method="get" action="/addgoal">
 <form id="addGoalForm" role="form" method="get" action="/addgoal">
   <div class="form-group">
     <label for="formGroupExampleInput">Category</label>
-    <input type="text" class="form-control" id="goalCat" placeholder="Commute, Food, Waste, etc.">
+    <input type="text" class="form-control" name="goalCat" placeholder="Commute, Food, Waste, etc.">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">Goal</label>
-    <input type="text" class="form-control" id="goalText" placeholder="I want to ...">
+    <input type="text" class="form-control" name="goalText" placeholder="I want to ...">
   </div>
   <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
 </form>
+<br>
+<br>
+<br>
+<br>
+<br>
 <!--
 </div>
  <div class="jumbotron">
@@ -137,7 +142,7 @@ form id="addGoalForm" role="form" method="get" action="/addgoal">
 -->
 
  <p>
-<nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom">
+<nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom" id="navbottom">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="index">

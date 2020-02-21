@@ -7,7 +7,7 @@ exports.addGoal = function(request, response) {
   var newGoal = {
     "goalCat" : goalCat,
     "goalText" : goalText
-  }
+  };
   console.log(newGoal);
   data.goals.push(newGoal);
   response.render('goal', data);

@@ -12,12 +12,64 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+	<style>
+
+</style>
 </head>
+
 
 <body>
 	<div class="jumbotron">
-		<h2 class="text-center">Log Food</h2>
+		<h2 class="text-center">Log Waste</h2>
 	</div>
+	<div class="text-center container">
+	<div class="form-group">
+		<label for="sel1">How many times did you eat meat today?</label>
+		<br>
+		<br>
+		<select class="form-control" id="amtmeat" size="4">
+				<option>0</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+		</div>
+	<br>
+	<br>
+	<div class="btncontainer" style="text-align:center">
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="updateFood()">
+			Save
+		</button>
+
+		<div class="modal" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title">Progress Saved!</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+						<div class="modal-body">
+							Your food intake has been recorded! You can either see your updated summary or add more progress.
+						</div>
+
+						<!-- Modal footer -->
+						<div class="modal-footer">
+							<a href="index" class="btn btn-success" role="button">To Summary</a>
+							<a href="addpage" class="btn btn-secondary" role="button">Add More</a>
+							<!--
+							<button type="button" class="btn btn-success" data-dismiss="modal">To Summary</button> -->
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 	<nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom">
 		<ul class="navbar-nav">
 			<li class="nav-item">
@@ -62,6 +114,16 @@
 			</li>
 		</ul>
 	</nav>
+	<script>
+		function updateFood(){
+			var input = $('#amtmeat option:selected').text();
+			console.log(input);
+			input = input.replace(/[^\d.-]/g, '');
+			sessionStorage.setItem('food', input);
+			var updates = 1;
+			sessionStorage.setItem('updating', updates);
+}
+	</script>
 </body>
 
 </html>
