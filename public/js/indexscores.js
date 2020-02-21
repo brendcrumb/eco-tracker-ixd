@@ -7,6 +7,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+//// COMMUTE
 	// current commute score
     var coscore = $('#cpb').text();
     coscore = coscore.replace(/[^\d.-]/g, '');
@@ -30,7 +31,17 @@ function initializePage() {
      // tracks score to avoid repeat addition
     var oldScore = sessionStorage.getItem('prevScore');
     oldScore = parseFloat(oldScore);
-    if(isNaN(oldScore) || (oldScore-cbarscore == 0)){oldScore = 0;}
+    if(isNaN(oldScore) || (oldScore-cbarscore == 0)){
+      var updates = sessionStorage.getItem('update');
+      updates = parseFloat(updates);
+      if(updates == 1){
+        oldScore = oldScore;
+      }
+      else{
+      oldScore = 0;
+      }
+    }
+    sessionStorage.removeItem('update');
     cbarscore = cbarscore + oldScore;
     cbarscore = Math.round((cbarscore)*10)/10;
     console.log("oldScore: " + oldScore);
@@ -40,7 +51,7 @@ function initializePage() {
      $('#cpb').html(cbarscore + " liters");
      $('#cpb').css("width", (cbarscore*33));
      
-      // update waste
+    //// WASTE
       var wastebar = sessionStorage.getItem('waste');
       if(wastebar == null || isNaN(wastebar)){wastebar = 0;}
       else{
@@ -54,9 +65,19 @@ function initializePage() {
       wbarscore = wbarscore + wscores;
       var oldWaste = sessionStorage.getItem('prevScoreW');
       oldWaste = parseFloat(oldWaste);
-      if(isNaN(oldWaste) || (oldWaste-wbarscore == 0)){oldWaste = 0;}
+      if(isNaN(oldWaste) || (oldWaste-wbarscore == 0)){
+          var updater = sessionStorage.getItem('updater');
+          updater = parseFloat(updater);
+          if(updater == 1){
+            oldWaste = oldWaste;
+          }
+          else{
+            oldWaste = 0;
+          }
+      }
+      sessionStorage.removeItem('updater');
       wbarscore = wbarscore + oldWaste;
-      console.log("oldScoreW: " + oldScore);
+      wbarscore = Math.round((wbarscore)*10)/10;
       sessionStorage.setItem('prevScoreW', wbarscore);
       sessionStorage.removeItem('waste');
       $('#wpb').html(wbarscore + " liters");

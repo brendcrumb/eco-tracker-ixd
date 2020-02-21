@@ -105,58 +105,5 @@
       </li>
     </ul>
   </nav>
-  <!--
-  <script>
-    //commute score
-      var coscore = document.getElementById("cpb").innerHTML;
-      coscore = coscore.replace(/[^\d.-]/g, '');
-      var coscores = parseFloat(coscore);
-      //waste score
-      var wscore = document.getElementById("wpb").innerHTML;
-      wscore = wscore.replace(/[^\d.-]/g, '');
-      var wscores = parseFloat(wscore);
-      //food score
-      var fscore = document.getElementById("fpb").innerHTML;
-      fscore = fscore.replace(/[^\d.-]/g, '');
-      var fscores = parseFloat(fscore);
-    // calculate the new progress bar from input for commute
-    var commutebar = sessionStorage.getItem('commute');
-    if(commutebar == null){commutebar = 0;}
-    //var cprogress = document.getElementById("cpb").style.width;
-    //var cprogress = parseFloat(cprogress);
-    var oldScore = sessionStorage.getItem('prevScore');
-    if(isNaN(oldScore)){oldScore = 0;}
-            console.log("oldScore: " + oldScore);
-    var percent = parseFloat(commutebar) + coscores + parseFloat(oldScore - coscores);
-          sessionStorage.setItem('prevScore', percent);
-    console.log("getCommute: " + commutebar);
-    console.log("currCommute: " + coscores);
-    console.log("total: " + percent);
-    var finalpercent = Math.round(percent*1.0194);
-    // calculate new score
-      var cscore = Math.round((finalpercent)*10)/100;
-    // calculate new scores
-      document.getElementById("cpb").innerHTML = cscore +" liters";
-      document.getElementById("cpb").style.width = (finalpercent*1.1)+"%";
-      var eScore = cscore+wscores+fscores;
-      console.log(eScore);
-      document.getElementById("score").innerHTML = eScore + "L";
-    // Change color of circle
-      var redBound = Number(5);
-      var yellowBound = Number(3);
-      eScore = Number(eScore);
-      if(eScore < yellowBound)
-        {document.getElementById("ccolor").style.borderColor = "yellow";}
-      else if(eScore < redBound)
-        {document.getElementById("ccolor").style.borderColor = "red";}
-      else{document.getElementById("ccolor").style.borderColor = "green";}
-    //}
-    /*
-    else{
-      document.getElementById("cpb").style.width = (commutepr)+"%";
-      document.getElementById("score").innerHTML = coscores+wscores+fscores+"L";
-    }*/
-  </script>
--->
 </body>
 </html>
