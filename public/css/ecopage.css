@@ -209,16 +209,16 @@ color: #000000;
 	font-style: normal;
 }
 
-.greyText {
+.smallWhiteText {
 	font-family: "SF Pro Display", sans-serif;
 	font-style: normal;
-	color: #333333
+	color: white;
 }
 
-.greenText {
+.whiteText {
 	font-family: "SF Pro Display", sans-serif;
 	font-style: bold;
-	color: #25CA5D;
+	color: white;
 }
 
 .profilegoals{
@@ -268,4 +268,14 @@ visibility:hidden;
 	color: #000;
 	text-decoration: none;
 	cursor:pointer;
+}
+
+#rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 500px;
+  height: 150px;
+	justify-content: center;
+	box-shadow: 10px 10px 5px #C1C1C1;
 }
