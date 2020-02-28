@@ -12,11 +12,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="js/indexscores.js"></script>
     <style>
-        img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    }
+          img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      }
     </style>
 </head>
 
@@ -37,23 +37,23 @@
 		<div class="text-center profilecss">
       <h2>Today's Emmisions</h2>
 			<div class="circle" id="ccolor">
-				<h1 id="score">0.0L</h1>
+				<h1 id="score">0.0lbs CO<sub>2</sub></h1>
 			</div>
 		</div>
 		<br>
 		<div class="text-xs-center">Commute</div>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="cpb">0.0 liters</div>
+			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="cpb">0.0 lbs</div>
 		</div>
 		<br>
 		<div class="text-xs-center">Food</div>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="fpb">0.0 liters</div>
+			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="fpb">0.0 lbs</div>
 		</div>
 		<br>
 		<div class="text-xs-center">Waste</div>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="wpb">0.0 liters</div>
+			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="wpb">0.0 lbs</div>
 		</div>
     <br>
     <br>
@@ -73,6 +73,9 @@
       </li>
     </ul>
   </nav>
+  <!-- <script> 
+    $('.sumid').html(<li class="nav-item active">);
+  </script>-->
 </body>
 {{> navbar}}
 </html>
