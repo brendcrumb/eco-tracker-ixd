@@ -40,7 +40,9 @@
 		<button style="background-color:#6FBF5F" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="updateFood()">
 			Save
 		</button>
-
+		  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#cancelModal">
+		    Cancel
+		  </button>
 		<div class="modal" id="myModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -67,6 +69,34 @@
 					</div>
 				</div>
 			</div>
+			<!-- This is the cancel modal -->
+		  <div class="modal" id="cancelModal">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+
+		        <!-- Modal Header -->
+		        <div class="modal-header">
+		          <h4 class="modal-title">Confirm Cancel</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+
+		        <!-- Modal body -->
+		        <div class="modal-body">
+		          Are you sure you want to cancel your progress? Nothing will be saved.
+		        </div>
+
+		        <!-- Modal footer -->
+		        <div class="modal-footer">
+		          <a href="addpage" class="btn btn-success" role="button">I'm sure!</a>
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind!</button>
+
+		          <!--
+		          <button type="button" class="btn btn-success" data-dismiss="modal">To Summary</button> -->
+		        </div>
+
+		      </div>
+		    </div>
+		  </div>
 		</div>
 
 	<script>
