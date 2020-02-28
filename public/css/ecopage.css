@@ -343,3 +343,7 @@ visibility:hidden;
   max-width: 100%;
   height: auto;
 }
+
+.intro{
+  background: url(/photo.png);
+}

@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <div class="wrap">
+    <div class="wrap intro">
         <form class="login-form">
             <div class="form-header">
                 <h3>Eco-Tracker</h3>
-                <p>Login to start tracking!</p>
+                <p>Helping you Lower Emissions!</p>
 		
             </div>
 
@@ -38,16 +38,15 @@
 
             	<div>
             	<p class= "image-center">
-            		Login with FB
+            		Login through FB
 				<fb:login-button
+                    width="200px"
   					scope="public_profile,email"
   					onlogin="checkLoginState();"
   					onlogin="window.location='/index.handlebars'">
 				</fb:login-button>
 				</p>
 				</div>
-
-
         </form>
     </div>
 </body>
