@@ -16,69 +16,42 @@
     <script src='js/day-main.js'></script>
     <script src='js/time-main.js'></script>
     <script src='js/interaction-main.js'></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.10.6/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.js" integrity="sha256-P4MQtGI8cNzilTUdhC76eGnwpT+6en3nu7ffb5Tv9q0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.css" integrity="sha256-NT6bm4eq8q01uIa7OVBdw2zWZNXm9nmIFhtRO6Zzx7s=" crossorigin="anonymous" />
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
+      $(document).ready(function() {
 
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: [ 'dayGrid' ]
-        });
 
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-          plugins: [ 'interaction', 'dayGrid' ],
-          defaultView: 'dayGridMonth',
-          selectable: true
+        $('#calendar').fullCalendar({
+          header: {
+          },
+          selectable: true,
+          navLinks: true,
+          navLinkDayClick: function(date, jsEvent) {
+            alert(' You have not tracked this day. ');
+          },
+          dayClick: function(date, jsEvent, view) {
+            alert(' You have not tracked this day. ');
+          }
         });
+      });
 
-        calendar.render();
-        });
     </script>
 
-          <script>
-              document.addEventListener('DOMContentLoaded', function() {
-              var calendarEl = document.getElementById('calendar');
-
-              var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: [ 'interaction', 'dayGrid', 'timeGrid' ],
-                selectable: true,
-                header: {
-                  left: 'prev,next today',
-                  center: 'title',
-                  right: 'dayGridMonth,timeGridWeek,timeGridDay'
-                },
-                dateClick: function(info) {
-                  alert('clicked ' + info.dateStr);
-                },
-              });
-
-              select: function(start, end) {
-    var title = prompt('Event Title:');
-    var eventData;
-    if (title) {
-        eventData = {
-            title: title,
-            start: start,
-            end: end
-        };
-        $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-    }
-    $('#calendar').fullCalendar('unselect');
-
-    if(/* your condition here */){
-        window.location.href = "testing.html";
-    }
-}
-          </script>
-          <style>
-               img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                }
-          </style>
+          
+     <style>
+        img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      </style>
 
   </head>
   <body>
+    <br>
     <div class="container">
     <br>
     <br>
