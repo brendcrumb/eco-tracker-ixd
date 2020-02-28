@@ -10,6 +10,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+      img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -55,19 +62,23 @@
 		<div class = "container">
 
 		{{#each tips}}
-			<div class = "textGroupBorder">
-				<p class = "greenText">Tip {{tipNum}}</p>
-				<h5 class = "greyText">{{tipText}}</h5>
-				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
-			    Share
-			  </button>
+			<div id = "rcorners1" style="background-color:#547FA9;" >
+				<h3 class = "whiteText" style="float:left">Tip {{tipNum}}</h3>
+				<button type="button" style="float:right;background-color:#6FBF5F;color:white" class="btn" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
+					Share
+				</button>
+				<br>
+				<br>
+				<h5 class = "smallWhiteText">{{tipText}}</h5>
 			</div>
+			<br>
 		{{/each}}
 		</div>
 		<br>
     <br>
     <br>
 	</body>
+
 
 	<div class="modal" id="tipsModal">
     <div class="modal-dialog">
@@ -104,7 +115,15 @@
     </div>
   </div>
 
+<<<<<<< HEAD
  <nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom">
+=======
+  <br>
+  <br>
+  <br>
+  <br>
+ <nav style="background-color:#6FBF5F"class="navbar navbar-expand navbar-dark justify-content-center  fixed-bottom">
+>>>>>>> 25fedee612ffb31dc28a20f41b0e7ee210a3815f
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="index">

@@ -12,7 +12,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <style>
   	body{padding-bottom: 120px;}
-  </style>
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		}
+	</style>
 	<!--
 	<style>
 		.button {
@@ -38,8 +43,15 @@
 
 <body>
 	<div class="jumbotron">
-		<h2 class="text-center">Goals</h2>
-	</div>
+		<h2 class="text-center" style="float:left">Goals</h2>
+		<img src="addButton.png" style="float:right;width:100px;height:100px"
+			class="open-button" onclick="openForm()"/>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 
 <!--
 <div class="wrapFullWidthButton">
@@ -59,11 +71,14 @@
 
 	<!--<h1>My Goals</h1> -->
 	{{#each goals}}
-		<div class = "textGroupBorder">
-			<p class = "greenText">{{goalCat}}</p>
-			<h5 class = "greyText">{{goalText}}</h5>
-			<input type="checkbox" name="goalCheck" value="Complete">
+		<div id = "rcorners1" style="background-color:#547FA9;">
+			<h3 class = "whiteText" style="float:left">{{goalCat}}</h3>
+			<input type="checkbox" style="float:right;width:20px;height:20px;" name="goalCheck" value="Complete">
+			<br>
+			<br>
+			<h5 class = "smallWhiteText">{{goalText}}</h5>
 		</div>
+		<br>
 	{{/each}}
 	</div>
 	<br>
@@ -76,23 +91,32 @@
 form id="addGoalForm" role="form" method="get" action="/addgoal">
 -->
 
-<div class="container">
-<form id="addGoalForm" role="form" method="get" action="/addgoal">
-  <div class="form-group">
-    <label for="formGroupExampleInput">Category</label>
-    <input type="text" class="form-control" name="goalCat" placeholder="Commute, Food, Waste, etc.">
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Goal</label>
-    <input type="text" class="form-control" name="goalText" placeholder="I want to ...">
-  </div>
-  <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
-</form>
+<div class="form-popup" id="myForm">
+		<form id="addGoalForm" role="form" method="get" action="/addgoal"class="form-container">
+		  <div class="form-group">
+				<h1>Add Goal</h1>
+		    <label for="formGroupExampleInput">Category</label>
+				<select class="form-control" name="goalCat">
+					<option>Commute</option>
+					<option>Food</option>
+					<option>Waste</option>
+				</select>
+		  </div>
+		  <div class="form-group">
+		    <label for="formGroupExampleInput2">Goal</label>
+		    <input type="text" class="form-control" name="goalText" placeholder="I want to ...">
+		  </div>
+		  <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</form>
+  </form>
+</div>
 <br>
 <br>
 <br>
 <br>
 <br>
+
 <!--
 </div>
  <div class="jumbotron">
@@ -141,8 +165,7 @@ form id="addGoalForm" role="form" method="get" action="/addgoal">
 	</div>
 -->
 
- <p>
-<nav class="navbar navbar-expand navbar-dark bg-success justify-content-center  fixed-bottom" id="navbottom">
+<nav style="background-color:#6FBF5F" class="navbar navbar-expand navbar-dark justify-content-center  fixed-bottom">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="index">
@@ -186,15 +209,17 @@ form id="addGoalForm" role="form" method="get" action="/addgoal">
       </li>
     </ul>
   </nav>
-    <script>
-    function addNewGoal(){
-     var cat = document.getElementById('goalCat').value;
-     var goal = document.getElementById('goalText').value;
-     document.getElementById('newgoal').innerHTML = cat;
-	 document.getElementById('newtext').innerHTML = goal;
-    }
-  </script>
 	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script>
+			function openForm() {
+			  document.getElementById("myForm").style.display = "block";
+			}
+
+			function closeForm() {
+			  document.getElementById("myForm").style.display = "none";
+			}
+	</script>
+
 </body>
 </html>
