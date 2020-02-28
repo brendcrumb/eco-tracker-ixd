@@ -62,18 +62,23 @@
 		<div class = "container">
 
 		{{#each tips}}
-			<div class = "textGroupBorder">
-				<p class = "greenText">Tip {{tipNum}}</p>
-				<h5 class = "greyText">{{tipText}}</h5>
-				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
-			    Share
-			  </button>
+			<div id = "rcorners1" style="background-color:#547FA9;" >
+				<h3 class = "whiteText" style="float:left">Tip {{tipNum}}</h3>
+				<button type="button" style="float:right;background-color:#6FBF5F;color:white" class="btn" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
+					Share
+				</button>
+				<br>
+				<br>
+				<h5 class = "smallWhiteText">{{tipText}}</h5>
 			</div>
+			<br>
 		{{/each}}
 		</div>
 		<br>
+    <br>
+    <br>
 	</body>
-  
+
 
 	<div class="modal" id="tipsModal">
     <div class="modal-dialog">
@@ -109,56 +114,12 @@
       </div>
     </div>
   </div>
-
   <br>
   <br>
   <br>
   <br>
- <nav style="background-color:#6FBF5F"class="navbar navbar-expand navbar-dark justify-content-center  fixed-bottom">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index">
-          <figure>
-            <img src='foot.png' alt='foot icon' height="15" width='15'/>
-            <figcaption>Summary</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="tips">
-          <figure>
-            <img src='lightbulb.png' alt='lightbulb icon' height="15" width='15'/>
-            <figcaption>Tips</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="addpage">
-          <figure>
-            <img src='plus.png' alt='add icon' height="15" width='15'/>
-            <figcaption>Add</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="goal">
-          <figure>
-            <img src='goals.png' alt='goals icon' height="15" width='15'/>
-            <figcaption>Goals</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="profile">
-          <figure>
-            <img src='profile.png' alt='profile icon' height="15" width='15'/>
-            <figcaption>Profile</figcaption>
-          </figure>
-        </a>
-      </li>
-    </ul>
-  </nav>
 	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
+{{> navbar}}
 </html>
