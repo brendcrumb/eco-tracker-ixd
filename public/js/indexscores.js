@@ -56,7 +56,7 @@ function initializePage() {
      sessionStorage.setItem('prevScore', cbarscore);
      sessionStorage.removeItem('commute');
      // update UI
-     $('#cpb').html(cbarscore + " liters");
+     $('#cpb').html(cbarscore + " lbs");
      $('#cpb').css("width", (cbarscore*33));
 
     //// WASTE
@@ -88,7 +88,7 @@ function initializePage() {
       wbarscore = Math.round((wbarscore)*10)/10;
       sessionStorage.setItem('prevScoreW', wbarscore);
       sessionStorage.removeItem('waste');
-      $('#wpb').html(wbarscore + " liters");
+      $('#wpb').html(wbarscore + " lbs");
       $('#wpb').css("width", (wbarscore*33));
 
 	/// FOOD BAR
@@ -120,14 +120,14 @@ function initializePage() {
       console.log("foodBar: " + fbarscore);
 			sessionStorage.setItem('prevScoreF', fbarscore);
 			sessionStorage.removeItem('food');
-			$('#fpb').html(fbarscore + " liters");
+			$('#fpb').html(fbarscore + " lbs");
 			$('#fpb').css("width", (fbarscore*33));
 
 
       //update emmission score
      var eScore = parseFloat(cbarscore)+parseFloat(wbarscore)+parseFloat(fbarscore);
      eScore = Math.round((eScore)*10)/10;
-     $("#score").html(eScore+"L");
+     $("#score").html(eScore+"<h5>lbs CO<sub>2</sub></h5>");
      // Change color of circle
       var yellowBound = Number(10);
       var redBound = Number(18);
