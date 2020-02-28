@@ -274,8 +274,8 @@ visibility:hidden;
   border-radius: 25px;
   background: #73AD21;
   padding: 20px;
-  width: 500px;
-  height: 150px;
+  width: 100%;
+  height: auto;
 	justify-content: center;
 	box-shadow: 10px 10px 5px #C1C1C1;
 }
@@ -333,4 +333,13 @@ visibility:hidden;
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+.navbar-nav img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.responsive {
+  max-width: 100%;
+  height: auto;
 }
