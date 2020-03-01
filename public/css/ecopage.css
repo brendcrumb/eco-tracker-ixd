@@ -82,9 +82,8 @@ body{
 .login-form{
     width: 350px;
     margin: 0 auto;
-    border: 1px solid #ddd;
     padding: 2rem;
-    background: #ffffff;
+    background: #6FBF5F;
 }
 
 .form-input{
