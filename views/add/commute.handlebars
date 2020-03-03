@@ -44,14 +44,7 @@
 	<br>
 	<br>
 
-	<!--
-	<div class="slidecontainer">
-	  <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
-	  <p  style="color:white" >Miles: <span id="demo"></span></p>
-  <br>
-	</div>
--->
-
+	{{#if ../viewAlt}}
 	<br>
 	<div class="form-group row">
 	  <label for="example-number-input" class="col-2 col-form-label">Miles</label>
@@ -60,6 +53,16 @@
 			<span id="demo"></span>
 	  </div>
 	</div>
+
+	{{else}}
+	<div class="slidecontainer">
+	  <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+	  <p  style="color:white" >Miles: <span id="demo"></span></p>
+  <br>
+	</div>
+	{{/if}}
+
+
 
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="updateSummary()">
     Save

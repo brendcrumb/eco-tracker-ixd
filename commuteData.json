@@ -1,0 +1,20 @@
+{
+  "goals": [
+    {
+      "goalCat": "Commute",
+      "goalText": "Ride my bike to work two times a week for three weeks"
+    },
+    {
+      "goalCat": "Food",
+      "goalText": "Don't eat beef for 2 weeks"
+    },
+    {
+      "goalCat":"Waste",
+      "goalText": "Use reusable silverware for 1 week"
+    },
+    {
+      "goalCat": "Commute",
+      "goalText": "Take the bus 3 times a week"
+    }
+  ]
+}
