@@ -13,6 +13,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+		ga('create', 'UA-159253536-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </head>
 
 <body style="background-color:#FF677E">
@@ -33,11 +43,24 @@
 	</div>
 	<br>
 	<br>
+
+	<!--
 	<div class="slidecontainer">
 	  <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
 	  <p  style="color:white" >Miles: <span id="demo"></span></p>
   <br>
 	</div>
+-->
+
+	<br>
+	<div class="form-group row">
+	  <label for="example-number-input" class="col-2 col-form-label">Miles</label>
+	  <div class="col-10">
+	    <input class="form-control" type="number" value="42" id="myRange">
+			<span id="demo"></span>
+	  </div>
+	</div>
+
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="updateSummary()">
     Save
   </button>
