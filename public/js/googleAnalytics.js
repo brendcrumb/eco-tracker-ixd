@@ -7,11 +7,11 @@ $(document).ready(function() {
  */
 function initializePage() {
 	// your code here
-	$(".btn btn-success").click(clickSaveBtn);
+	$(".saveBtn").click(clickSaveBtn);
 }
 
 function clickSaveBtn() {
 	//e.preventDefault();
 	ga('create','UA-158806700-1', 'auto');
-	ga('send', 'event', 'btn btn-success', 'click');
+	ga('send', 'event', 'saveBtn', 'click');
 }
