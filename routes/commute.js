@@ -11,11 +11,11 @@ exports.view = function(req, res){
 */
 
 exports.view = function(request, response){
-    commuteData['viewAlt'] = false;
+    commuteData["viewAlt"] = false;
     response.render('add/commute', commuteData);
 };
 
 exports.viewAlt = function(request, response){
-  commuteData['viewAlt'] = true
+    commuteData["viewAlt"] = true;
     response.render('add/commute', commuteData);
 };
