@@ -41,13 +41,12 @@
 			<img src="logo.png" style="width:200px;height:40px;">
 		</ul>
 	</nav>
-
-
+<br>
 	<div class="jumbotron">
 		<h2 class="text-center" style="float:left;">Goals</h2>
-		<img src="addButton.png" style="float:right;width:80px;height:80px"
-			class="open-button" onclick="openForm()"/>
 		<br>
+		<img src="addButton.png" style="float:right;width:70px;height:70px"
+			class="open-button" onclick="openForm()"/>
 		<br>
 		<br>
 		<br>
@@ -68,16 +67,16 @@
 		 <!-- comment
 		 <button class="form-button" type="submit">Login</button>
  -->
-	<div class = "container">
 
-	<!--<h1>My Goals</h1> -->
+	<div class = "container">
 	{{#each goals}}
-		<div id = "rcorners1" style="background-color:#547FA9;">
-			<h3 class = "whiteText" style="float:left">{{goalCat}}</h3>
-			<input type="checkbox" style="float:right;width:20px;height:20px;" name="goalCheck" value="Complete">
-			<br>
-			<br>
-			<h5 class = "smallWhiteText">{{goalText}}</h5>
+		<div class="card bg-light mb-4">
+			<div class="card-header" style="background-color: #6FBF5F">
+			</div>
+			<div class="card-body">
+			<h5 class="card-title">{{goalCat}}</h5>
+			<p class="card-text">{{goalText}}</p>
+		</div>
 		</div>
 		<br>
 	{{/each}}
