@@ -126,7 +126,7 @@
 		    <input type="text" class="form-control" name="goalText" placeholder="I want to ...">
 		  </div>
 		  <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
-			<button type="button">Close</button>
+			<button type="submit" class="btn btn-danger" onclick="closeForm()">Close</button>
 		</form>
   </form>
 </div>
@@ -146,8 +146,9 @@
 			function closeForm() {
 			  document.getElementById("myForm").style.display = "none";
 			}
-			function change()
+			function change(e)
 			{
+				e.preventDefault();
 			    var elem = document.getElementById("myButton1");
 			    if (elem.value=="Goal Accomplished!") elem.value = "In Progress";
 			    else elem.value = "Goal Accomplished!";
