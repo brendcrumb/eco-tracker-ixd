@@ -75,21 +75,20 @@
 
 	<body>
 		<div class = "container">
-
-		{{#each tips}}
-			<div id = "rcorners" style="background-color:#547FA9;" >
-				<h3 class = "whiteText" style="float:left">Tip {{tipNum}}</h3>
-				<button type="button" style="float:right;background-color:#6FBF5F;color:white" class="btn" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
-					Copy
-				</button>
-				<br>
-				<br>
-				<h5 class = "smallWhiteText">{{tipText}}</h5>
+	{{#each tips}}
+		<div class="card bg-light mb-2" style="border-color:#6FBF5F">
+			<div class="card-header" style="background-color: #6FBF5F">
 			</div>
-			<br>
-		{{/each}}
+			<div class="card-body">
+			<h5 class="card-title">Tip of the Day</h5>
+			<p class="card-text">{{tipText}}</p>
+			<button type="button" style="float:right;background-color:#6FBF5F;color:white" class="btn" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()"> Copy </button>
+				<br>
+		</div>
 		</div>
 		<br>
+	{{/each}}
+	</div>
     <br>
     <br>
 	</body>
