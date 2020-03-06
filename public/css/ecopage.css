@@ -364,6 +364,7 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
+<<<<<<< HEAD
 .column {
   float: left;
   width: 50%;
@@ -375,4 +376,8 @@ visibility:hidden;
   content: "";
   display: table;
   clear: both;
+=======
+.btn-right{
+  float: right;
+>>>>>>> 6acedae3b48131056482335ecb0c51cc6556e1bc
 }
