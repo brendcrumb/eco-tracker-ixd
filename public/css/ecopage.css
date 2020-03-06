@@ -324,6 +324,10 @@ visibility:hidden;
   opacity: 0.8;
 }
 
+.right-btn{
+  float:right;
+}
+
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
@@ -347,6 +351,25 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
+<<<<<<< HEAD
+.btn-right{
+  float: right;
+
+<<<<<<< HEAD
+.column {
+  float: left;
+  width: 50%;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+=======
+>>>>>>> 6acedae3b48131056482335ecb0c51cc6556e1bc
+=======
 a.info {
   vertical-align: bottom;
   position:relative; /* Anything but static */
@@ -382,4 +405,5 @@ a.info:before {
 
 .popover-title {
   font-weight:bold;
+>>>>>>> 2e8e210f0c90336dec21be5900db764b15cbc89c
 }
