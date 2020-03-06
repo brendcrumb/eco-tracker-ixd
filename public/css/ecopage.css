@@ -346,3 +346,7 @@ visibility:hidden;
 .intro{
   background: url(/photo.png);
 }
+
+.btn-right{
+  float: right;
+}
