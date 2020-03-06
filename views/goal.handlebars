@@ -70,14 +70,17 @@
 
 	<div class = "container">
 	{{#each goals}}
-		<div class="card bg-light mb-4" style="border-color:#6FBF5F">
+		<div class="card bg-light mb-2" style="border-color:#6FBF5F">
 			<div class="card-header" style="background-color: #6FBF5F">
 			</div>
 			<div class="card-body">
 			<h5 class="card-title">{{goalCat}}</h5>
 			<p class="card-text">{{goalText}}</p>
-			<a href="#" class="btn-right" data-toggle="modal" data-target="#editModal" onclick="onEdit(0);">edit</a>
+			<a href="#" class="btn-right close-icon">edit</a>
 		</div>
+		  <div class="card-footer bg-transparent border-success text-center"><input onclick="change()" type="button" value="In Progress" id="myButton1"></input>
+
+		 </div>
 		</div>
 		<br>
 	{{/each}}
@@ -109,7 +112,7 @@ form id="addGoalForm" role="form" method="get" action="/addgoal">
 		    <input type="text" class="form-control" name="goalText" placeholder="I want to ...">
 		  </div>
 		  <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
-			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+			<button type="button">Close</button>
 		</form>
   </form>
 </div>
@@ -176,6 +179,15 @@ form id="addGoalForm" role="form" method="get" action="/addgoal">
 			function closeForm() {
 			  document.getElementById("myForm").style.display = "none";
 			}
+				$('.close-icon').on('click',function() {
+				$(this).parent().remove();
+    		});
+function change()
+{
+    var elem = document.getElementById("myButton1");
+    if (elem.value=="Goal Accomplished!") elem.value = "In Progress";
+    else elem.value = "Goal Accomplished!";
+}
 	</script>
 </body>
 {{> navbar}}
