@@ -278,23 +278,6 @@ visibility:hidden;
 	justify-content: center;
 	box-shadow: 10px 10px 5px #C1C1C1;
 }
-#rcorners {
-  border-radius: 25px;
-  background: #73AD21;
-  padding: 20px;
-  width: 100%;
-  height: auto;
-	justify-content: center;
-}
-
-#rcorners2 {
-  border-radius: 10px;
-  background: #F0F0F0;
-  padding: 20px;
-  width: 70%;
-  height: auto;
-	justify-content: center;
-}
 
 
 /* The popup form - hidden by default */
@@ -364,20 +347,39 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
-<<<<<<< HEAD
-.column {
-  float: left;
-  width: 50%;
-
+a.info {
+  vertical-align: bottom;
+  position:relative; /* Anything but static */
+  width: 1em;
+  height: 1em;
+  text-indent: -9999em;
+  display: inline-block;
+  color: white;
+  font-weight:bold;
+  font-size:.8em;
+  line-height:.8em;
+  background-color: #91b2d2;
+  margin-left: .2em;
+  -webkit-border-radius:.75em;
+  -moz-border-radius:.75em;
+  border-radius:.75em;
+}
+a.info:hover {
+  background-color:#628cb6;
+  cursor: hand; 
+  cursor: pointer;
+}
+a.info:before {
+  content:"?";
+  position: absolute;
+  top: .1em;
+  left:0;
+  text-indent: 0;
+  display:block;
+  width:1em;
+  text-align:center;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-=======
-.btn-right{
-  float: right;
->>>>>>> 6acedae3b48131056482335ecb0c51cc6556e1bc
+.popover-title {
+  font-weight:bold;
 }
