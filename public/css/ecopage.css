@@ -364,6 +364,9 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
+.btn-right{
+  float: right;
+
 <<<<<<< HEAD
 .column {
   float: left;
@@ -377,7 +380,5 @@ visibility:hidden;
   display: table;
   clear: both;
 =======
-.btn-right{
-  float: right;
 >>>>>>> 6acedae3b48131056482335ecb0c51cc6556e1bc
 }
