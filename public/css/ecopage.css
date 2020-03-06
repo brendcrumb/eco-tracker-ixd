@@ -278,6 +278,22 @@ visibility:hidden;
 	justify-content: center;
 	box-shadow: 10px 10px 5px #C1C1C1;
 }
+#rcorners {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+	justify-content: center;
+}
+
+#rcorners2 {
+  border-radius: 10px;
+  padding: 20px;
+  width: 70%;
+  height: auto;
+	justify-content: center;
+}
 
 
 /* The popup form - hidden by default */
@@ -345,4 +361,17 @@ visibility:hidden;
 
 .intro{
   background: url(/photo.png);
+}
+
+.column {
+  float: left;
+  width: 50%;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

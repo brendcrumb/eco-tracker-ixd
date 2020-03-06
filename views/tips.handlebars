@@ -19,13 +19,14 @@
   </style>
 </head>
 
-<body>
+<body style="background-image:url('tipBackground.png')">
 
 	<nav style="background-color:#6FBF5F" class="navbar navbar-expand navbar-light justify-content-center  fixed-top">
 		<ul class="navbar-nav">
       <img src="logo.png" style="width:200px;height:40px;">
     </ul>
   </nav>
+
 
 
 	<div class="jumbotron">
@@ -70,7 +71,7 @@
 		<div class = "container">
 
 		{{#each tips}}
-			<div id = "rcorners1" style="background-color:#547FA9;" >
+			<div id = "rcorners" style="background-color:#547FA9;" >
 				<h3 class = "whiteText" style="float:left">Tip {{tipNum}}</h3>
 				<button type="button" style="float:right;background-color:#6FBF5F;color:white" class="btn" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()">
 					Copy
