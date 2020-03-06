@@ -270,13 +270,13 @@ visibility:hidden;
 }
 
 #rcorners1 {
-  border-radius: 25px;
+  border-radius: 25px
   background: #73AD21;
   padding: 20px;
   width: 100%;
   height: auto;
-	justify-content: center;
-	box-shadow: 10px 10px 5px #C1C1C1;
+  justify-content: center;
+  box-shadow: 10px 10px 5px #C1C1C1;
 }
 
 
