@@ -351,11 +351,9 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
-<<<<<<< HEAD
 .btn-right{
   float: right;
-
-<<<<<<< HEAD
+}
 .column {
   float: left;
   width: 50%;
@@ -367,9 +365,7 @@ visibility:hidden;
   content: "";
   display: table;
   clear: both;
-=======
->>>>>>> 6acedae3b48131056482335ecb0c51cc6556e1bc
-=======
+}
 a.info {
   vertical-align: bottom;
   position:relative; /* Anything but static */
@@ -405,5 +401,4 @@ a.info:before {
 
 .popover-title {
   font-weight:bold;
->>>>>>> 2e8e210f0c90336dec21be5900db764b15cbc89c
 }
