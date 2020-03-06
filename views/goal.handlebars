@@ -7,40 +7,25 @@
 	<link href="css/ecopage.css" rel="stylesheet">
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/goal.js"></script>
+</head>
   <style>
-  	    body{
+      img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    body{
     	  background-image: url('tipBackground.png');
 		  background-repeat: no-repeat;
 		  background-attachment: fixed;
 		  background-position: center;
     }
-	</style>
-	<!--
-	<style>
-		.button {
-	  	background-color: #1c87c9;
-	    border: none;
-	    color: white;
-	    padding: 20px 34px;
-	    text-align: center;
-	    text-decoration: none;
-	    display: inline-block;
-	    font-size: 20px;
-	    margin: 0 auto;
-	    cursor: pointer;
-	    }
-		button-center {
-			text-align: center;
-		}
-	</style>
-	Source of help: https://www.w3schools.com/asp/asp_inputforms.asp
---->
-
-</head>
-
+  </style>
 <body>
 	<nav style="background-color:#6FBF5F" class="navbar navbar-expand navbar-light justify-content-center  fixed-top">
 		<ul class="navbar-nav">
@@ -51,7 +36,7 @@
 	<div class="jumbotron">
 		<h2 class="text-center" style="float:left;">Goals</h2>
 		<br>
-		<img src="addButton.png" style="float:right; width:70px; height:70px"
+		<img src="addButton.png" style="float:right;width:70px;height:70px"
 			class="open-button" onclick="openForm()"/>
 		<br>
 		<br>
@@ -66,13 +51,14 @@
 			</div>
 			<div class="card-body">
 			<h5 class="card-title">{{goalCat}}</h5>
-			<p class="card-text">{{goalText}}</p>
-			<a href="#" class="right-btn">edit</a>
+			<p class="card-text"><span id="{{id}}-goalText">{{goalText}}</span>
+				<br>
+			<a href="#" class="btn-right" data-toggle="modal" data-target="#editModal" onclick="onEdit({{id}});">edit goal</a>
 		</div>
-<!--Footer
+<!--Footer-->
 		  <div class="card-footer bg-transparent border-success text-center"><input onclick="change()" type="button" value="In Progress" id="myButton1"></input>
 		 </div>
--->
+
 		</div>
 		<br>
 	{{/each}}
@@ -81,35 +67,32 @@
 	<br>
 </body>
 
-<!--EDIT MODAL
-<div class="form-popup" id="myForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block;">
+<!--Modal for Edit-->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Edit Goal</h5>
+		        <h5 class="modal-title" id="exampleModalLabel">Edit Your Goal</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">×</span>
+		          <span aria-hidden="true">&times;</span>
 		        </button>
 		      </div>
 		      <div class="modal-body">
-
-		        <form id="editWorkoutForm" role="form" method="get" action="/editWorkout">
-		        	<div class="form-group">
-				      <input type="text" class="form-control" id="edit-id" name="id">
-				    </div>
+		        <form id="editGoalForm">
 				    <div class="form-group">
-				      <input type="text" class="form-control" id="edit-type" name="type">
+				      <input type="text" class="form-control" id="edit-goalText" name="goalText">
 				    </div>
-		      </form></div>
+		      </div>
 		      <div class="modal-footer">
-		      	<button id="delete-id" type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteWorkout()">Remove</button>
+		      	<button id="delete-id" type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteGoal()">Remove</button>
 		        <button type="submit" class="btn btn-primary">Save</button>
 		      </div>
+		      </form> 
 		    </div>
 		  </div>
 		</div>
--->
 
+<!--Modal for Add-->
 <div class="form-popup" id="myForm">
 		<form id="addGoalForm" role="form" method="get" action="/addgoal"class="form-container">
 		  <div class="form-group">
@@ -126,7 +109,7 @@
 		    <input type="text" class="form-control" name="goalText" placeholder="I want to ...">
 		  </div>
 		  <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
-			<button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
+			<button type="button">Close</button>
 		</form>
   </form>
 </div>
@@ -146,14 +129,13 @@
 			function closeForm() {
 			  document.getElementById("myForm").style.display = "none";
 			}
-			function change(e)
+			function change()
 			{
-				e.preventDefault();
 			    var elem = document.getElementById("myButton1");
 			    if (elem.value=="Goal Accomplished!") elem.value = "In Progress";
 			    else elem.value = "Goal Accomplished!";
 			}
-	</script>
+				</script>
 </body>
 {{> navbar}}
 </html>
