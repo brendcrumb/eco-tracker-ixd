@@ -290,11 +290,26 @@ visibility:hidden;
 #rcorners2 {
   border-radius: 10px;
   background: #F0F0F0;
-  padding: 20px;
-  width: 70%;
+  padding: 10px;
+  width: 100%;
   height: auto;
-	justify-content: center;
+
 }
+
+.grid-container {
+	display: inline-grid;
+	grid-template-columns: auto auto;
+	padding: 15px;
+	margin-left: 15px;
+	margin-right:auto;
+	grid-gap: 25px 25px;
+}
+
+.grid-item {
+	text-align: center;
+	width: 125px;
+}
+
 
 
 /* The popup form - hidden by default */
@@ -364,10 +379,8 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
-<<<<<<< HEAD
 .column {
-  float: left;
-  width: 50%;
+  column-count: 2;
 
 }
 
@@ -376,8 +389,21 @@ visibility:hidden;
   content: "";
   display: table;
   clear: both;
-=======
-.btn-right{
-  float: right;
->>>>>>> 6acedae3b48131056482335ecb0c51cc6556e1bc
+}
+
+#loader-wrapper .loader-section {
+	position: fixed;
+	top:0;
+	width: 51%;
+	height: 100%;
+	background: #222222;
+	z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left{
+	left:0;
+}
+
+#loader-wrapper .loader-section.section-right{
+	right:0;
 }
