@@ -270,11 +270,12 @@ visibility:hidden;
 }
 
 #rcorners1 {
-  border-radius: 25px;
+  border-radius: 25px
   background: #73AD21;
   padding: 20px;
   width: 100%;
   height: auto;
+<<<<<<< HEAD
 	justify-content: center;
 	box-shadow: 10px 10px 5px #C1C1C1;
 }
@@ -308,6 +309,10 @@ visibility:hidden;
 .grid-item {
 	text-align: center;
 	width: 125px;
+=======
+  justify-content: center;
+  box-shadow: 10px 10px 5px #C1C1C1;
+>>>>>>> 515a04092c7728aec656a10c674e06cb836aed24
 }
 
 
@@ -356,6 +361,10 @@ visibility:hidden;
   opacity: 0.8;
 }
 
+.right-btn{
+  float:right;
+}
+
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
@@ -379,6 +388,12 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
+<<<<<<< HEAD
+=======
+.btn-right{
+  float: right;
+}
+>>>>>>> 515a04092c7728aec656a10c674e06cb836aed24
 .column {
   column-count: 2;
 
@@ -390,6 +405,7 @@ visibility:hidden;
   display: table;
   clear: both;
 }
+<<<<<<< HEAD
 
 #loader-wrapper .loader-section {
 	position: fixed;
@@ -406,4 +422,41 @@ visibility:hidden;
 
 #loader-wrapper .loader-section.section-right{
 	right:0;
+=======
+a.info {
+  vertical-align: bottom;
+  position:relative; /* Anything but static */
+  width: 1em;
+  height: 1em;
+  text-indent: -9999em;
+  display: inline-block;
+  color: white;
+  font-weight:bold;
+  font-size:.8em;
+  line-height:.8em;
+  background-color: #91b2d2;
+  margin-left: .2em;
+  -webkit-border-radius:.75em;
+  -moz-border-radius:.75em;
+  border-radius:.75em;
+}
+a.info:hover {
+  background-color:#628cb6;
+  cursor: hand; 
+  cursor: pointer;
+}
+a.info:before {
+  content:"?";
+  position: absolute;
+  top: .1em;
+  left:0;
+  text-indent: 0;
+  display:block;
+  width:1em;
+  text-align:center;
+}
+
+.popover-title {
+  font-weight:bold;
+>>>>>>> 515a04092c7728aec656a10c674e06cb836aed24
 }

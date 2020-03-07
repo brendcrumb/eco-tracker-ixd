@@ -12,3 +12,4 @@ exports.addGoal = function(request, response) {
   data.goals.push(newGoal);
   response.render('goal', data);
 }
+

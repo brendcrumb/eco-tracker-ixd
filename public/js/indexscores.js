@@ -28,12 +28,12 @@ function initializePage() {
      var cbarscore = Math.round(commutebar*1.0194);
      cbarscore = Math.round((cbarscore)*10)/100;
      var tmode = sessionStorage.getItem('mode');
-     if(tmode === "Walk"){ cbarscore = commutebar*0.3398;}
-     else if(tmode === "Bike/Scooter"){ cbarscore = commutebar*0.6796;}
-     else if(tmode === "Plane"){ cbarscore = commutebar*2.3862;}
-     else if(tmode === "Bus"){ cbarscore = commutebar*0.8342;}
-     else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.7372;}
-     else{cbarscore = commutebar*1.0194;}
+     if(tmode === "Walk"){ cbarscore = commutebar*0.0020;}
+     else if(tmode === "Bike/Scooter"){ cbarscore = commutebar*0.0030;}
+     else if(tmode === "Plane"){ cbarscore = commutebar*1.1186;}
+     else if(tmode === "Bus"){ cbarscore = commutebar*0.0427;}
+     else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.0737;}
+     else{cbarscore = commutebar*0.0449;}
      cbarscore = Math.round((cbarscore)*10)/100;
      cbarscore = cbarscore + coscores;
      // tracks score to avoid repeat addition
@@ -66,7 +66,7 @@ function initializePage() {
         wastebar = parseFloat(wastebar);
       }
       console.log("inWaste1: " + wastebar);
-      var wbarscore = wastebar*0.3672;
+      var wbarscore = wastebar*1.9448;
       console.log("inWaste2: " + wastebar);
       wbarscore = (Math.round((wbarscore)*10)/10);
       console.log("waste: " + wbarscore);
@@ -98,7 +98,7 @@ function initializePage() {
 				foodbar = parseFloat(foodbar);
 			}
       console.log("foodIn: " + foodbar);
-			var fbarscore = foodbar*1.4375;
+			var fbarscore = foodbar*3.1944;
 			fbarscore = (Math.round((fbarscore)*10)/10);
 			fbarscore = fbarscore + fscores;
       console.log("foodBar: " + fbarscore);
@@ -129,8 +129,8 @@ function initializePage() {
      eScore = Math.round((eScore)*10)/10;
      $("#score").html(eScore+"<h5>lbs CO<sub>2</sub></h5>");
      // Change color of circle
-      var yellowBound = Number(10);
-      var redBound = Number(18);
+      var yellowBound = Number(20);
+      var redBound = Number(40);
       if(eScore >= redBound)
         {
           console.log("overRed");

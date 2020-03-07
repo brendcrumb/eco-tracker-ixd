@@ -46,28 +46,34 @@
 		<br>
 
 		<div class="text-center profilecss">
-      <h2>Today's Emmisions</h2>
+      <h2>Today's Emmisions <a class="info" data-toggle="popover" data-placement="right" data-content="The average daily carbon footprint for a U.S. citizen is 38.4 lbs CO2e. How does your score compare?" title="" data-original-title="Daily Emmisions">Info</a>
+    </h2>
 			<div class="circle" id="ccolor">
 				<h1 id="score">0.0lbs CO<sub>2</sub></h1>
 			</div>
 		</div>
 		<br>
-		<div class="text-xs-center">Commute</div>
+		<div class="text-xs-center">Commute <a class="info" data-toggle="popover" data-placement="right" data-content="For each mile that you travel by car, you emit 0.5 lbs CO2e. By plane, you emit 25 times more CO2!" title="" data-original-title="Emmisions from Commute">Info</a>
+		</div>
 		<div class="progress">
 			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="cpb">0.0 lbs</div>
 		</div>
 		<br>
-		<div class="text-xs-center">Food</div>
+		<div class="text-xs-center">Food
+		<a class="info" data-toggle="popover" data-placement="right" data-content="For each meal that contains meat, you emit 3.2 lbs CO2e!" title="" data-original-title="Emmisions from Food">Info</a>
+	</div>
 		<div class="progress">
 			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="fpb">0.0 lbs</div>
 		</div>
 		<br>
-		<div class="text-xs-center">Waste</div>
+		<div class="text-xs-center">Waste <a class="info" data-toggle="popover" data-placement="right" data-content="For each single-use plastic that you use, you emit 1.9 lbs CO2e!" title="" data-original-title="Emissions from Waste">Info</a>
+		</div>
 		<div class="progress">
 			<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="wpb">0.0 lbs</div>
 		</div>
 		<br>
 
+<<<<<<< HEAD
 <div class="grid-container">
 	<div class="grid-item">
 			<div id = "rcorners2" style="background-color:#F0F0F0;" >
@@ -92,6 +98,8 @@
 </div>
 
 
+=======
+>>>>>>> 515a04092c7728aec656a10c674e06cb836aed24
 <!--
 	<p>------- You've saved --------</p>
 	<div class="row">
@@ -121,8 +129,18 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
  --->
 
+=======
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+-->
+>>>>>>> 515a04092c7728aec656a10c674e06cb836aed24
 
 	<nav style="background-color:#6FBF5F" class="navbar navbar-expand navbar-light justify-content-center  fixed-top">
 		<ul class="navbar-nav">
@@ -134,9 +152,22 @@
       </li>
     </ul>
   </nav>
-  <!-- <script>
-    $('.sumid').html(<li class="nav-item active">);
-  </script>-->
+   <script>
+    //$('.sumid').html(<li class="nav-item active">);
+    $('.info').popover();
+
+
+	$(':not(#anything)').on('click', function (e) {
+	    $('.info').each(function () {
+	        //the 'is' for buttons that trigger popups
+	        //the 'has' for icons and other elements within a button that triggers a popup
+	        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+	            $(this).popover('hide');
+	            return;
+	        }
+	    });
+	});
+  </script>
 </body>
 {{> navbar}}
 </html>
