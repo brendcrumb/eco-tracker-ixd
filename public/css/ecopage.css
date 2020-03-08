@@ -83,7 +83,8 @@ body{
     width: 350px;
     margin: 0 auto;
     padding: 2rem;
-    background: #6FBF5F;
+		position: fixed;
+    top: 50%;
 }
 
 .form-input{
@@ -426,7 +427,7 @@ visibility:hidden;
 	    top: 0;
 	    width: 51%;
 	    height: 100%;
-	    background: #222222;
+	    background: #c1c1c1;
 	    z-index: 1000;
 	}
 
@@ -460,8 +461,8 @@ visibility:hidden;
 
 	.loaded #loader {
     opacity: 0;
-		-webkit-transition: all 0.3s ease-out;
-            transition: all 0.3s ease-out;
+		-webkit-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
 }
 
 
@@ -513,4 +514,8 @@ a.info:before {
 }
 .no-js h1 {
     color: #222222;
+}
+
+#content {
+	position:
 }
