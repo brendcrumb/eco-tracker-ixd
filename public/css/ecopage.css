@@ -50,9 +50,9 @@ html{
     height: 100%;
 }
 
-h3{
-	color: #25CA5D;
-}
+/*h3{*/
+	/*color: #25CA5D;*/
+/*}*/
 
 body{
     font-family: 'SF Pro Display';
@@ -389,12 +389,9 @@ visibility:hidden;
   background: url(/photo.png);
 }
 
-<<<<<<< HEAD
-=======
 .btn-right{
   float: right;
 }
->>>>>>> 515a04092c7728aec656a10c674e06cb836aed24
 .column {
   column-count: 2;
 
@@ -468,12 +465,6 @@ visibility:hidden;
             transition: all 0.2s ease-out;
 }
 
-
-
-
-
-
-=======
 a.info {
   vertical-align: bottom;
   position:relative; /* Anything but static */
@@ -509,7 +500,6 @@ a.info:before {
 
 .popover-title {
   font-weight:bold;
->>>>>>> 515a04092c7728aec656a10c674e06cb836aed24
 }
 
 .no-js #loader-wrapper {
