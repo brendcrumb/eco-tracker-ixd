@@ -164,32 +164,48 @@ function initializePage() {
   // Calculations for Trees saved
 	var amtTrees = parseInt(amtFromAvg / 3);
   amtTrees = parseInt(amtTrees + savings);
+  var tree = sessionStorage.getItem('tree');
+  if(tree > amtTrees){amtTrees = tree;}
+  else{amtTrees = amtTrees + tree;}
 	if (amtTrees < 0){
 		amtTrees = 0;
 	}
+  sessionStorage.setItem('tree', amtTrees);
 	$("#amt_Trees").html(amtTrees);
 
 	// Calculation for gallons Oil Saved
 	var amtOil = parseInt(amtFromAvg / 14);
   amtOil = parseInt(amtOil + savings);
+  var oil = sessionStorage.getItem('oil');
+  if(oil > amtOil){amtOil = oil;}
+  else{amtOil = amtOil + oil;}
 	if (amtOil < 0){
 		amtOil = 0;
 	}
+  sessionStorage.setItem('oil', amtOil);
 	$("#amt_Oil").html(amtOil);
 
 	// Calculation for lbs Coal Saved
 	var amtCoal = parseInt(amtFromAvg / 4);
   amtCoal = parseInt(amtCoal + savings);
+  var coal = sessionStorage.getItem('coal');
+  if(coal > amtCoal){amtCoal = coal;}
+  else{amtOil = amtOil + oil;}
 	if (amtCoal < 0){
 		amtCoal = 0;
 	}
+  sessionStorage.setItem('coal', amtCoal);
 	$("#amt_Coal").html(amtCoal);
 
 	// Calculation for gallons Gas Saved
 	var amtGas = parseInt(amtFromAvg / 20);
   amtGas = parseInt(amtGas + savings);
+  var gas = sessionStorage.getItem('gas');
+  if(gas > amtGas){amtGas = gas;}
+  else{amtGas = amtGas + gas;}
 	if (amtGas < 0){
 		amtGas = 0;
 	}
+  sessionStorage.setItem('gas', amtGas);
 	$("#amt_Gas").html(amtGas);
 }
