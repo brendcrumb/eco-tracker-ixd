@@ -158,28 +158,28 @@ function initializePage() {
 	var amtFromAvg = averageLBScarbon - cbarscore+wbarscore+fbarscore;
 	// Calculation for amt Trees Saved
 
-	var amtTrees = parseFloat(amtFromAvg * 0.5);
+	var amtTrees = parseInt(amtFromAvg * 0.5);
 	if (amtTrees < 0){
 		amtTrees = 0;
 	}
 	$("#amt_Trees").html(amtTrees);
 
 	// Calculation for gallons Oil Saved
-	var amtOil = parseFloat(amtFromAvg / 19.4);
+	var amtOil = parseInt(amtFromAvg / 19.4);
 	if (amtOil < 0){
 		amtOil = 0;
 	}
 	$("#amt_Oil").html(amtOil);
 
 	// Calculation for lbs Coal Saved
-	var amtCoal = parseFloat(amtFromAvg / 2);
+	var amtCoal = parseInt(amtFromAvg / 2);
 	if (amtCoal < 0){
 		amtCoal = 0;
 	}
 	$("#amt_Coal").html(amtCoal);
 
 	// Calculation for gallons Gas Saved
-	var amtGas = parseFloat(amtFromAvg / 19.64)
+	var amtGas = parseInt(amtFromAvg / 19.64)
 	if (amtGas < 0){
 		amtGas = 0;
 	}

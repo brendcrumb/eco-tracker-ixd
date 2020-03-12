@@ -299,7 +299,7 @@ visibility:hidden;
   border-radius: 10px;
   background: #F0F0F0;
   width: 100%;
-  height:80px;
+  height:100px;
 	padding: 10px;
 
 
@@ -311,14 +311,11 @@ visibility:hidden;
 	display: inline-grid;
 	grid-template-columns: auto auto;
 	padding: 15px;
-	margin-left: 15px;
-	margin-right:auto;
 	grid-gap: 25px 25px;
 }
 
 .grid-item {
-	text-align: center;
-	width: 125px;
+	width: 150px;
 }
 
 
