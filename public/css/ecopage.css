@@ -18,7 +18,7 @@ h2{
 }
 h4{
 	text-align: center;
-	color: darkgrey;
+	color: black;
 }
 
 .circle, #ccolor{
@@ -79,12 +79,17 @@ body{
     background: #fafafa;
 }
 
+.flatperson {
+		top:10%
+		position: fixed;
+}
+
 .login-form{
     width: 350px;
     margin: 0 auto;
     padding: 2rem;
 		position: fixed;
-    top: 50%;
+    top: 45%;
 }
 
 .form-input{
@@ -385,8 +390,11 @@ visibility:hidden;
   height: auto;
 }
 
-.intro{
-  background: url(/photo.png);
+.intro {
+  background: #8fcf82;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .btn-right{
