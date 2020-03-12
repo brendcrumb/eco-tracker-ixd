@@ -72,9 +72,7 @@
 	</div>
 	</div>
 -->
-
-	<body>
-		<div class = "container">
+	<div class = "container">
 	{{#each tips}}
 		<div class="card bg-light mb-2" style="border-color:#6FBF5F">
 			<div class="card-header" style="background-color: #6FBF5F">
@@ -82,19 +80,15 @@
 			<div class="card-body">
 			<h5 class="card-title">Tip of the Day</h5>
 			<p class="card-text">{{tipText}}</p>
-			<button type="button" style="float:right;background-color:#6FBF5F;color:white" class="btn" data-toggle="modal" data-target="#tipsModal" onclick="updateSummary()"> Copy </button>
-				<br>
+			<button type="button" style="float:right;background-color:#6FBF5F;color:white" class="btn" data-toggle="modal" data-target="#tipsModal"> Copy </button>
+			<br>
 		</div>
 		</div>
 		<br>
 	{{/each}}
-	</div>
     <br>
     <br>
-	</body>
-
-
-	<div class="modal" id="tipsModal">
+    <div class="modal" id="tipsModal">
     <div class="modal-dialog">
       <div class="modal-content">
 
@@ -103,31 +97,15 @@
           <h4 class="modal-title">Link copied to clipboard!</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-
-        <!-- Modal body -->
-<!--
-        <div class="modal-body">
-
-          Your commute has been recorded! You can either see your updated summary or add more progress.
-        </div>
-			-->
-
-
-        <!-- Modal footer -->
-
         <div class="modal-footer">
           <a href="tips" class="btn btn-success" role="button">Close</a>
-					<!--
-          <a href="addpage" class="btn btn-secondary" role="button">Add More</a>
-
-          <button type="button" class="btn btn-success" data-dismiss="modal">To Summary</button>
-				-->
         </div>
-
 
       </div>
     </div>
   </div>
+</div>
+
   <br>
   <br>
   <br>

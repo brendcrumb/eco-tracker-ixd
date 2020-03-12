@@ -109,7 +109,7 @@
 		    <input type="text" class="form-control" name="goalText" placeholder="I want to ...">
 		  </div>
 		  <input type="submit" id="submitBtn" class="btn btn-primary" value="Add Goal"></input>
-			<button type="button">Close</button>
+			<button type="button" class="btn btn-danger" onclick="closeForm()">Close</button>
 		</form>
   </form>
 </div>
@@ -128,6 +128,9 @@
 
 			function closeForm() {
 			  document.getElementById("myForm").style.display = "none";
+			}
+			function deleteGoal() {
+			   //document.getElementById("{{id}}-goalText").style.display = "none";
 			}
 			function change()
 			{

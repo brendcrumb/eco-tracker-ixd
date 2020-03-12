@@ -8,6 +8,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 //// COMMUTE
+  var savings = 0;
 	// current commute score
     var coscore = $('#cpb').text();
     coscore = coscore.replace(/[^\d.-]/g, '');
@@ -28,11 +29,13 @@ function initializePage() {
      var cbarscore = Math.round(commutebar*1.0194);
      cbarscore = Math.round((cbarscore)*10)/100;
      var tmode = sessionStorage.getItem('mode');
-     if(tmode === "Walk"){ cbarscore = commutebar*0.0020;}
-     else if(tmode === "Bike/Scooter"){ cbarscore = commutebar*0.0030;}
+     if(tmode === "Walk"){ cbarscore = commutebar*0.0200;
+                            savings = commutebar*0.5200;}
+     else if(tmode === "Bike/Scooter"){ cbarscore = commutebar*0.0300;
+                                        savings = commutebar*0.5000;}
      else if(tmode === "Plane"){ cbarscore = commutebar*1.1186;}
-     else if(tmode === "Bus"){ cbarscore = commutebar*0.0427;}
-     else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.0737;}
+     else if(tmode === "Bus"){ cbarscore = commutebar*0.4270;}
+     else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.3737;}
      else{cbarscore = commutebar*0.8900;}
      cbarscore = Math.round((cbarscore)*10)/100;
      cbarscore = cbarscore + coscores;
