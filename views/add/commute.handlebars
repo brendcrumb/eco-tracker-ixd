@@ -58,14 +58,7 @@ gtag('config', '', { 'XS1FgeHuQUaXu3TBv9qDSA': 'GTM-K5L63D5'});
 	<!--{{#if viewAlt}}-->
 
 	<!--new numerical input from A/B testing -->
-	<br>
-	<div class="form-group">
-	  <label for="myRange" class="col-2 col-form-label" style="color:white">Miles</label>
-	  <div class="col-xs-6">
-	    <input class="form-control" type="number" value="0" min="0" step="1"id="myRange">
-			<p style="color:#FF677E"><span id="demo"></span></p>
-	  </div>
-	</div>
+
 
 	<!-- old slider bar input
 	{{else}}
@@ -76,7 +69,12 @@ gtag('config', '', { 'XS1FgeHuQUaXu3TBv9qDSA': 'GTM-K5L63D5'});
 	</div>
 	{{/if}}
 -->
-
+  <div class="form-group">
+    <label for="myRange" class="col-2 col-form-label" style="color:white">Miles</label>
+    <div class="col-xs-6">
+      <input class="form-control" type="number" value="0" min="0" step="1"id="myRange">
+    </div>
+  </div>
 
   <button type="button" class="btn btn-success saveBtn" data-toggle="modal" data-target="#myModal" onclick="updateSummary()">
     Save
@@ -141,17 +139,15 @@ gtag('config', '', { 'XS1FgeHuQUaXu3TBv9qDSA': 'GTM-K5L63D5'});
 </div>
     <script>
     	var slider = document.getElementById("myRange");
-    	var output = document.getElementById("demo");
-    	output.innerHTML = slider.value;
       var miles = slider.value;
 
-    	slider.oninput = function() {
-    	  output.innerHTML = this.value;
-    	}
+    	// slider.oninput = function() {
+    	  // output.innerHTML = this.value;
+    	// }
       function updateSummary(){
         var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
+        // var output = document.getElementById("demo");
+        // output.innerHTML = slider.value;
         var miles = slider.value;
         sessionStorage.setItem('commute', miles);
         var updater = 1;
