@@ -56,7 +56,7 @@ app.get('/food', food.view);
 app.get('/waste', waste.view);
 app.get('/addgoalpage', addgoalpage.view);
 app.get('/commute', commute.view);
-app.get('/viewAlt', commute.viewAlt);
+//app.get('/viewAlt', commute.viewAlt);
 // Example route
 app.get('/addgoal', addgoal.addGoal);
 // app.get('/users', user.list);
