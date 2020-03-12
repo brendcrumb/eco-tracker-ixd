@@ -33,7 +33,7 @@ function initializePage() {
      else if(tmode === "Plane"){ cbarscore = commutebar*1.1186;}
      else if(tmode === "Bus"){ cbarscore = commutebar*0.0427;}
      else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.0737;}
-     else{cbarscore = commutebar*0.0449;}
+     else{cbarscore = commutebar*0.8900;}
      cbarscore = Math.round((cbarscore)*10)/100;
      cbarscore = cbarscore + coscores;
      // tracks score to avoid repeat addition
@@ -129,8 +129,8 @@ function initializePage() {
      eScore = Math.round((eScore)*10)/10;
      $("#score").html(eScore+"<h5>lbs CO<sub>2</sub></h5>");
      // Change color of circle
-      var yellowBound = Number(20);
-      var redBound = Number(40);
+      var yellowBound = Number(25);
+      var redBound = Number(45);
       if(eScore >= redBound)
         {
           console.log("overRed");
