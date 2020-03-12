@@ -55,7 +55,9 @@ gtag('config', '', { 'XS1FgeHuQUaXu3TBv9qDSA': 'GTM-K5L63D5'});
 	</div>
 	<br>
 
-	{{#if viewAlt}}
+	<!--{{#if viewAlt}}-->
+
+	<!--new numerical input from A/B testing -->
 	<br>
 	<div class="form-group">
 	  <label for="myRange" class="col-2 col-form-label" style="color:white">Miles</label>
@@ -65,6 +67,7 @@ gtag('config', '', { 'XS1FgeHuQUaXu3TBv9qDSA': 'GTM-K5L63D5'});
 	  </div>
 	</div>
 
+	<!-- old slider bar input
 	{{else}}
 	<div class="slidecontainer">
 	  <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
@@ -72,7 +75,7 @@ gtag('config', '', { 'XS1FgeHuQUaXu3TBv9qDSA': 'GTM-K5L63D5'});
   <br>
 	</div>
 	{{/if}}
-
+-->
 
 
   <button type="button" class="btn btn-success saveBtn" data-toggle="modal" data-target="#myModal" onclick="updateSummary()">

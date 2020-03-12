@@ -18,7 +18,7 @@ h2{
 }
 h4{
 	text-align: center;
-	color: darkgrey;
+	color: black;
 }
 
 .circle, #ccolor{
@@ -79,12 +79,17 @@ body{
     background: #fafafa;
 }
 
+.flatperson {
+		top:10%
+		position: fixed;
+}
+
 .login-form{
     width: 350px;
     margin: 0 auto;
     padding: 2rem;
 		position: fixed;
-    top: 50%;
+    top: 45%;
 }
 
 .form-input{
@@ -294,7 +299,7 @@ visibility:hidden;
   border-radius: 10px;
   background: #F0F0F0;
   width: 100%;
-  height:80px;
+  height:100px;
 	padding: 10px;
 
 
@@ -306,14 +311,11 @@ visibility:hidden;
 	display: inline-grid;
 	grid-template-columns: auto auto;
 	padding: 15px;
-	margin-left: 15px;
-	margin-right:auto;
 	grid-gap: 25px 25px;
 }
 
 .grid-item {
-	text-align: center;
-	width: 125px;
+	width: 150px;
 }
 
 
@@ -385,8 +387,11 @@ visibility:hidden;
   height: auto;
 }
 
-.intro{
-  background: url(/photo.png);
+.intro {
+  background: #8fcf82;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .btn-right{
