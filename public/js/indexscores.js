@@ -30,9 +30,9 @@ function initializePage() {
      cbarscore = Math.round((cbarscore)*10)/100;
      var tmode = sessionStorage.getItem('mode');
      if(tmode === "Walk"){ cbarscore = commutebar*0.0200;
-                            savings = commutebar*0.5200;}
+                            savings = commutebar*0.5;}
      else if(tmode === "Bike/Scooter"){ cbarscore = commutebar*0.0300;
-                                        savings = commutebar*0.5000;}
+                                        savings = commutebar*0.45;}
      else if(tmode === "Plane"){ cbarscore = commutebar*1.1186;}
      else if(tmode === "Bus"){ cbarscore = commutebar*0.4270;}
      else if(tmode === "Motorcycle"){ cbarscore = commutebar*0.3737;}
@@ -70,6 +70,7 @@ function initializePage() {
       }
       console.log("inWaste1: " + wastebar);
       var wbarscore = wastebar*1.9448;
+      if(wbarscore == 0){savings = savings + 2;}
       console.log("inWaste2: " + wastebar);
       wbarscore = (Math.round((wbarscore)*10)/10);
       console.log("waste: " + wbarscore);
@@ -102,6 +103,7 @@ function initializePage() {
 			}
       console.log("foodIn: " + foodbar);
 			var fbarscore = foodbar*3.1944;
+      if(fbarscore == 0){savings = savings + 5;}
 			fbarscore = (Math.round((fbarscore)*10)/10);
 			fbarscore = fbarscore + fscores;
       console.log("foodBar: " + fbarscore);
@@ -158,31 +160,34 @@ function initializePage() {
 	// example: $("#div-id").click(functionToCall);
 
 	var averageLBScarbon = 110;
-	var amtFromAvg = averageLBScarbon - cbarscore+wbarscore+fbarscore;
-	// Calculation for amt Trees Saved
-
-	var amtTrees = parseInt(amtFromAvg * 0.5);
+	var amtFromAvg = averageLBScarbon - eScore;
+  // Calculations for Trees saved
+	var amtTrees = parseInt(amtFromAvg / 3);
+  amtTrees = parseInt(amtTrees + savings);
 	if (amtTrees < 0){
 		amtTrees = 0;
 	}
 	$("#amt_Trees").html(amtTrees);
 
 	// Calculation for gallons Oil Saved
-	var amtOil = parseInt(amtFromAvg / 19.4);
+	var amtOil = parseInt(amtFromAvg / 14);
+  amtOil = parseInt(amtOil + savings);
 	if (amtOil < 0){
 		amtOil = 0;
 	}
 	$("#amt_Oil").html(amtOil);
 
 	// Calculation for lbs Coal Saved
-	var amtCoal = parseInt(amtFromAvg / 2);
+	var amtCoal = parseInt(amtFromAvg / 4);
+  amtCoal = parseInt(amtCoal + savings);
 	if (amtCoal < 0){
 		amtCoal = 0;
 	}
 	$("#amt_Coal").html(amtCoal);
 
 	// Calculation for gallons Gas Saved
-	var amtGas = parseInt(amtFromAvg / 19.64)
+	var amtGas = parseInt(amtFromAvg / 20);
+  amtGas = parseInt(amtGas + savings);
 	if (amtGas < 0){
 		amtGas = 0;
 	}
