@@ -139,13 +139,21 @@
 	</div>
 <<<<<<< HEAD
  --->
+<br>
+<br>
+<br>
+ 	<p style="float:right">
+        <a href="/" class="btn btn-outline-success btn-lg" onclick="clearData()">
+          <span class="glyphicon glyphicon-log-out"></span>Log out
+        </a>
+      </p> 
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	
 
 
 	<nav style="background-color:#6FBF5F" class="navbar navbar-expand navbar-light justify-content-center  fixed-top">
@@ -173,6 +181,12 @@
 	        }
 	    });
 	});
+	function clearData(){
+		sessionStorage.removeItem('tree');
+		sessionStorage.removeItem('oil');
+		sessionStorage.removeItem('coal');
+		sessionStorage.removeItem('gas');
+	}
   </script>
 </body>
 {{> navbar}}

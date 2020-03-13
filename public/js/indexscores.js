@@ -9,6 +9,7 @@ $(document).ready(function() {
 function initializePage() {
 //// COMMUTE
   var savings = 0;
+  var counter = 0;
 	// current commute score
     var coscore = $('#cpb').text();
     coscore = coscore.replace(/[^\d.-]/g, '');
@@ -67,10 +68,10 @@ function initializePage() {
       if(wastebar == null || isNaN(wastebar)){wastebar = 0;}
       else{
         wastebar = parseFloat(wastebar);
+        if(wbarscore == 0){savings = 2;}
       }
       console.log("inWaste1: " + wastebar);
       var wbarscore = wastebar*1.9448;
-      if(wbarscore == 0){savings = savings + 2;}
       console.log("inWaste2: " + wastebar);
       wbarscore = (Math.round((wbarscore)*10)/10);
       console.log("waste: " + wbarscore);
@@ -81,7 +82,8 @@ function initializePage() {
           var updater = sessionStorage.getItem('updater');
           updater = parseFloat(updater);
           if(updater == 1){
-            oldWaste = oldWaste;
+            oldWaste = oldWaste;     
+
           }
           else{
             oldWaste = 0;
@@ -100,10 +102,11 @@ function initializePage() {
 			if(foodbar == null || isNaN(foodbar)){foodbar = 0;}
 			else{
 				foodbar = parseFloat(foodbar);
+        if(fbarscore == 0){savings = 5;}
+
 			}
       console.log("foodIn: " + foodbar);
 			var fbarscore = foodbar*3.1944;
-      if(fbarscore == 0){savings = savings + 5;}
 			fbarscore = (Math.round((fbarscore)*10)/10);
 			fbarscore = fbarscore + fscores;
       console.log("foodBar: " + fbarscore);
@@ -161,51 +164,69 @@ function initializePage() {
 
 	var averageLBScarbon = 110;
 	var amtFromAvg = averageLBScarbon - eScore;
+  if(eScore == 0){amtFromAvg = 0;}
   // Calculations for Trees saved
-	var amtTrees = parseInt(amtFromAvg / 3);
+	var amtTrees = parseInt(amtFromAvg/ 3);
+  // console.log("trees1: " + amtTrees);
   amtTrees = parseInt(amtTrees + savings);
-  var tree = sessionStorage.getItem('tree');
-  if(tree > amtTrees){amtTrees = tree;}
-  else{amtTrees = amtTrees + tree;}
+  // console.log("trees2: " + amtTrees);
+  // console.log("savingst: " + savings);
+  // var tree = sessionStorage.getItem('tree');
+  // tree = parseInt(tree);
+  // if(tree === amtTrees){amtTrees = amtTrees;}
+  // // else if(tree > amtTrees){amtTrees = tree;}
+  // else{amtTrees = amtTrees + tree;}
 	if (amtTrees < 0){
 		amtTrees = 0;
 	}
-  sessionStorage.setItem('tree', amtTrees);
+  // sessionStorage.setItem('tree', amtTrees);
 	$("#amt_Trees").html(amtTrees);
 
 	// Calculation for gallons Oil Saved
-	var amtOil = parseInt(amtFromAvg / 14);
+	var amtOil = parseInt(amtFromAvg/ 14);
   amtOil = parseInt(amtOil + savings);
-  var oil = sessionStorage.getItem('oil');
-  if(oil > amtOil){amtOil = oil;}
-  else{amtOil = amtOil + oil;}
+  // var oil = sessionStorage.getItem('oil');
+  // oil = parseInt(oil);
+  // if(oil == amtOil){amtOil = amtOil;}
+  // // if(oil > amtOil){amtOil = oil;}
+  // else{amtOil = amtOil + oil;}
 	if (amtOil < 0){
 		amtOil = 0;
 	}
-  sessionStorage.setItem('oil', amtOil);
+  // sessionStorage.setItem('oil', amtOil);
 	$("#amt_Oil").html(amtOil);
 
 	// Calculation for lbs Coal Saved
-	var amtCoal = parseInt(amtFromAvg / 4);
+	var amtCoal = parseInt(amtFromAvg/ 4);
   amtCoal = parseInt(amtCoal + savings);
-  var coal = sessionStorage.getItem('coal');
-  if(coal > amtCoal){amtCoal = coal;}
-  else{amtOil = amtOil + oil;}
+ //  var coal = sessionStorage.getItem('coal');
+ //   coal = parseInt(coal);
+ // if(coal == amtCoal){amtCoal = amtCoal;}
+ //  // if(coal > amtCoal){amtCoal = coal;}
+ //  else{amtOil = amtOil + oil;}
 	if (amtCoal < 0){
 		amtCoal = 0;
 	}
-  sessionStorage.setItem('coal', amtCoal);
+  // sessionStorage.setItem('coal', amtCoal);
 	$("#amt_Coal").html(amtCoal);
 
 	// Calculation for gallons Gas Saved
 	var amtGas = parseInt(amtFromAvg / 20);
   amtGas = parseInt(amtGas + savings);
-  var gas = sessionStorage.getItem('gas');
-  if(gas > amtGas){amtGas = gas;}
-  else{amtGas = amtGas + gas;}
+  // var gas = sessionStorage.getItem('gas');
+  // gas = parseInt(gas);
+  // if(gas == amtGas){amtGas = amtGas;}
+  // // if(gas > amtGas){amtGas = gas;}
+  // else{amtGas = amtGas + gas;}
 	if (amtGas < 0){
 		amtGas = 0;
 	}
-  sessionStorage.setItem('gas', amtGas);
+  // sessionStorage.setItem('gas', amtGas);
 	$("#amt_Gas").html(amtGas);
+  console.log("savings: " + savings);
+  console.log("amountfromavg: " + amtFromAvg);
+  console.log("trees: " + amtTrees);
+  console.log("oil: " + amtOil);
+  console.log("coal: " + amtCoal);
+  console.log("gas: " + amtGas);
 }
