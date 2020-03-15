@@ -82,7 +82,7 @@ function initializePage() {
           var updater = sessionStorage.getItem('updater');
           updater = parseFloat(updater);
           if(updater == 1){
-            oldWaste = oldWaste;     
+            oldWaste = oldWaste;
 
           }
           else{
@@ -176,7 +176,7 @@ function initializePage() {
   // if(tree === amtTrees){amtTrees = amtTrees;}
   // // else if(tree > amtTrees){amtTrees = tree;}
   // else{amtTrees = amtTrees + tree;}
-	if (amtTrees < 0){
+	if (amtTrees <= 0){
 		amtTrees = 0;
 	}
   // sessionStorage.setItem('tree', amtTrees);
@@ -190,7 +190,7 @@ function initializePage() {
   // if(oil == amtOil){amtOil = amtOil;}
   // // if(oil > amtOil){amtOil = oil;}
   // else{amtOil = amtOil + oil;}
-	if (amtOil < 0){
+	if (amtOil <= 0){
 		amtOil = 0;
 	}
   // sessionStorage.setItem('oil', amtOil);
@@ -204,7 +204,7 @@ function initializePage() {
  // if(coal == amtCoal){amtCoal = amtCoal;}
  //  // if(coal > amtCoal){amtCoal = coal;}
  //  else{amtOil = amtOil + oil;}
-	if (amtCoal < 0){
+	if (amtCoal <= 0){
 		amtCoal = 0;
 	}
   // sessionStorage.setItem('coal', amtCoal);
@@ -218,7 +218,7 @@ function initializePage() {
   // if(gas == amtGas){amtGas = amtGas;}
   // // if(gas > amtGas){amtGas = gas;}
   // else{amtGas = amtGas + gas;}
-	if (amtGas < 0){
+	if (amtGas <= 0){
 		amtGas = 0;
 	}
   // sessionStorage.setItem('gas', amtGas);

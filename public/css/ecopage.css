@@ -84,6 +84,10 @@ body{
 		position: fixed;
 }
 
+#login-graphic {
+	top:100%;
+}
+
 .login-form{
     width: 350px;
     margin: 0 auto;
@@ -418,14 +422,12 @@ visibility:hidden;
     height: 100%;
     z-index: 1000;
 }
-    #loader {
-        position: fixed;
-        top: 25%;
-        width: 150px;
-        height: 150px;
-        z-index: 1001;
 
-  }
+#loader {
+    position: absolute;
+		top: 5%;
+    z-index: 1001;
+}
 
 	#loader-wrapper .loader-section {
 	    position: fixed;
