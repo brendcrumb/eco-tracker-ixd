@@ -16,6 +16,9 @@ p.header{
   font-weight: 530;
   font-family: GT Walsheim Pro;
 }
+p.header a{
+  color:black;
+}
 
 .profilecss h2{
     padding-top: 20px;
@@ -500,11 +503,13 @@ a.info {
 }
 a.info:hover {
   background-color:#628cb6;
+    color:black;
   cursor: hand;
   cursor: pointer;
 }
 a.info:before {
   content:"?";
+    color:black;
   position: absolute;
   top: .1em;
   left:0;
