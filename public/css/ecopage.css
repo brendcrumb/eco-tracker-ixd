@@ -541,3 +541,12 @@ a.info:before {
     text-align: center;
     /*float:right;*/
   }
+
+.greenBackground{
+background-color:#BEE1B8;
+padding: 7px;
+}
+
+input#boxid{
+  margin-right: 5px;
+}

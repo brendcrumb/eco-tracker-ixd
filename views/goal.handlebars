@@ -46,17 +46,15 @@
 		<div class="card bg-light mb-2" style="border-color:#6FBF5F">
 			<div class="card-header" style="background-color: #6FBF5F">
 			</div>
-			<div class="card-body">
+			<div class="card-body" id="cardBody">
 			<h5 class="card-title">{{goalCat}}</h5>
 			<p class="card-text"><span id="{{id}}-goalText">{{goalText}}</span>
 				<br>
 			<a href="#" class="btn-right" data-toggle="modal" data-target="#editModal" onclick="onEdit({{id}});">edit goal</a>
+			<br>
+		<input id="boxid" type="checkbox"><label for="boxid">Mark as Complete</label>
 		</div>
-<!--Footer-->
-		  <div class="card-footer bg-transparent border-success text-center"><input onclick="change()" type="button" value="In Progress" id="myButton1"></input>
-		 </div>
-
-		</div>
+	</div>
 		<br>
 	{{/each}}
 	</div>
@@ -119,6 +117,21 @@
 	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script>
+$("input[type='checkbox']").change(function(){
+    if($(this).is(":checked")){
+        $(this).parent().addClass("greenBackground"); 
+    }else{
+        $(this).parent().removeClass("greenBackground");  
+    }
+});
+
+$('#boxid').click(function() {
+  if ($(this).is(':checked')) {
+    $(this).siblings('label').html('Goal Completed!');
+  } else {
+    $(this).siblings('label').html('Mark as Complete');
+  }
+});
 			function openForm() {
 			  document.getElementById("myForm").style.display = "block";
 			}
