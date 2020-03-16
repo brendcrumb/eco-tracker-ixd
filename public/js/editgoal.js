@@ -1,13 +1,3 @@
-function initializePage() {
-  console.log("Page is ready");
-  initEditGoal();
-}
-
-/*
-$(document).ready(function() {
-  initializePage();
-})
-*/
 
 var currentId;
 function onEdit(id) {
@@ -32,25 +22,6 @@ function initEditGoal() {
   }); 
 }
 
-/*
-$.delete = function(url, data, callback, type){
- 
-  if ( $.isFunction(data) ){
-    type = type || callback,
-        callback = data,
-        data = {}
-  }
- 
-  return $.ajax({
-    url: url,
-    type: 'DELETE',
-    success: callback,
-    data: data,
-    contentType: type
-  });
-}
-*/
-
 function deleteGoal() {
   var id = currentId;
   var result = confirm("Confirm to delete");
@@ -61,3 +32,4 @@ function deleteGoal() {
     });
   }
 }
+*/
