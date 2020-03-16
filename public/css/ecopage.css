@@ -8,6 +8,15 @@ h2{
     padding-top: 20px;
 
 }
+
+
+p.header{
+  color: #28A745;
+  font-size: 31px;
+  font-weight: 530;
+  font-family: GT Walsheim Pro;
+}
+
 .profilecss h2{
     padding-top: 20px;
     padding-bottom: 10px;
