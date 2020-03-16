@@ -1,4 +1,4 @@
-
+/*
 var currentId;
 function onEdit(id) {
   currentId = id;
@@ -32,3 +32,4 @@ function removeGoal() {
     });
   }
 }
+*/
