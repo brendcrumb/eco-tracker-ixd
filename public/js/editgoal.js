@@ -22,14 +22,13 @@ function initEditGoal() {
   }); 
 }
 
-function deleteGoal() {
+function removeGoal() {
   var id = currentId;
   var result = confirm("Confirm to delete");
   if(result) {
-    $.delete('deleteGoal', {id: id});
+    $.delete('removeGoal', {id: id});
     setTimeout(function(){
       window.location.reload();
     });
   }
 }
-*/
